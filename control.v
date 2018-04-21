@@ -1,0 +1,7 @@
+module control(
+	input [5 :0] opcode,
+	output[10:0] control_signal
+);
+
+
+endmodule 

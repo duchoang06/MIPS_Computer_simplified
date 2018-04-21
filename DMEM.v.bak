@@ -1,0 +1,7 @@
+module DMEM(
+	input [31:0] DMEM_address,
+	input [31:0] DMEM_data_in,
+	input DMEM_mem_write,
+	input DMEM_mem_read,
+	output[31:0] DMEM_data_out
+);

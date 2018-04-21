@@ -1,0 +1,9 @@
+module system (
+	input SYS_clk;
+	input SYS_rst;
+	input SYS_load;
+	input [7:0] SYS_pc_val;
+	input [7:0] SYS_output_sel;
+	input [26:0] SYS_leds;
+);
+

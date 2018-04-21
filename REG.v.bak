@@ -1,0 +1,9 @@
+module REG(
+	input [5:0] REG_address1,
+	input [5:0] REG_address2,
+	input [5:0] REG_address_wr,
+	input REG_write_1,
+	input [31:0] REG_data_wb_in1,
+	output[31:0] REG_data_out1,
+	output[31:0] REG_data_out2,
+);
