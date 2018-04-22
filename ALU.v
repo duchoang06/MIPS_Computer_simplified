@@ -1,14 +1,14 @@
 module ALU
 	(
-		input [3:0] ALU_control,
+		input [3:0] ALU_ctrl,
 		input [31:0] ALU_operand_1,
 		input [31:0] ALU_operand_2,
 		output [31:0] ALU_result,
 		output [7:0] ALU_status
 	);
 	
-	always @(ALU_control) begin
-		case (ALU_control) 
+	always @(ALU_ctrl) begin
+		case (ALU_ctrl) 
 		4'b0010: ALU_result = ALU_operand_1 + ALU_operand_2;
 		4'b0110: ALU_result = ALU_operand_1 - ALU_operand_2;
 		4'b0000: ALU_result = ALU_operand_1 & ALU_operand_2;

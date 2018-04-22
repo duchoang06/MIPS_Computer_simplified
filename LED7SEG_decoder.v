@@ -1,4 +1,4 @@
-module SEG_HEX
+module LED7SEG_decoder
 	(	 
 		iDIG,								 
 		oHEX_D		
