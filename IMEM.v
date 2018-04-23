@@ -7,6 +7,8 @@ module IMEM
 	
 	reg [31:0] IMEM_mem [0:255];
 	
+	
+//	IMEM_mem[0] = 10101101101 $mem_read
 	always @(posedge IMEM_clk) begin
 		IMEM_instruction <= IMEM_mem[IMEM_PC];
 	end
