@@ -1,6 +1,6 @@
 module DMEM
 	(
-		input [31:0] DMEM_address, // least significant 8-bit in/out
+		input [7:0] DMEM_address, // least significant 8-bit in/out
 		input [31:0] DMEM_data_in,
 		input DMEM_mem_write,
 		input DMEM_mem_read,
@@ -9,6 +9,10 @@ module DMEM
 	);
 	
 	reg [31:0] DMEM_mem [0:255];
+	
+	initial begin
+		$readmemb("DMEM_mem.bin", DMEM_mem);
+	end
 	
 	always @(posedge DMEM_clk) begin
 		if (DMEM_mem_write) begin

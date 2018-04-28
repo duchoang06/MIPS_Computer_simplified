@@ -1,6 +1,5 @@
-module ADDER 
+module EPC
 	(
 	);
-	
 	
 endmodule 

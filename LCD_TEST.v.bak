@@ -1,14 +1,14 @@
-module LCD_TEST (	// controller
+module	LCD_TEST (
+					// controller
 					iCLK,iRST_N,
 					//	LCD out
 					LCD_DATA,LCD_RW,LCD_EN,LCD_RS,
 					// data in
-					x1, x2, x3, x4, x5, x6, x7, x8, y, z1, z2, z3, z4, z5, z6, z7, z8
-					);
+					fs0, fs1, fm0, fm1, fh0, fh1);
 					
 // input
 input			iCLK,iRST_N;
-input [3:0] x1, x2, x3, x4, x5, x6, x7, x8, y, z1, z2, z3, z4, z5, z6, z7, z8;
+input [3:0] fs0, fs1, fm0, fm1, fh0, fh1;
 
 // output
 output	[7:0]	LCD_DATA;
@@ -90,41 +90,23 @@ begin
 	LCD_INTIAL+3:	LUT_DATA	<=	9'h006;
 	LCD_INTIAL+4:	LUT_DATA	<=	9'h080;	
    //	Line 1
-	LCD_LINE1+0:	LUT_DATA	<=	9'h150;			// P
-	LCD_LINE1+1:	LUT_DATA	<=	9'h143; 			// C 
-	LCD_LINE1+2:	LUT_DATA	<=	9'h13A; 			// :
-	LCD_LINE1+3:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+4:	LUT_DATA	<=	decoder(x1);	//x1
-	LCD_LINE1+5:	LUT_DATA	<=	decoder(x2);	//x2
-	LCD_LINE1+6:	LUT_DATA	<=	decoder(x3);	//x3
-	LCD_LINE1+7:	LUT_DATA	<=	decoder(x4);	//x4
-	LCD_LINE1+8:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+9:	LUT_DATA	<=	decoder(x5);	//x5
-	LCD_LINE1+10:	LUT_DATA	<=	decoder(x6);	//x6
-	LCD_LINE1+11:	LUT_DATA	<=	decoder(x7);	//x7
-	LCD_LINE1+12:	LUT_DATA	<=	decoder(x8);	//x8
-	LCD_LINE1+13:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+14:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+15:	LUT_DATA	<=	9'h120;			// <space>
+	LCD_LINE1+0:	LUT_DATA	<=	9'h154; // T
+	LCD_LINE1+1:	LUT_DATA	<=	9'h169; // i 
+	LCD_LINE1+2:	LUT_DATA	<=	9'h16D; // m
+	LCD_LINE1+3:	LUT_DATA	<=	9'h165; // e
+	LCD_LINE1+4:	LUT_DATA	<=	9'h13A; // :
+	LCD_LINE1+5:	LUT_DATA	<=	9'h120; // <space>
    //	Change line
 	LCD_CH_LINE:	LUT_DATA	<=	9'h0C0;
 	//	Line 2
-	LCD_LINE2+0:	LUT_DATA	<=	9'h14F;			// O
-	LCD_LINE2+1:	LUT_DATA	<=	9'h153; 			// S 
-	LCD_LINE2+2:	LUT_DATA	<=	9'h13A; 			// :
-	LCD_LINE2+3:	LUT_DATA	<=	decoder(y);		//y
-	LCD_LINE2+4:	LUT_DATA	<= 9'h120;			// <space>
-	LCD_LINE2+5:	LUT_DATA	<=	9'h14F;			// O
-	LCD_LINE2+6:	LUT_DATA	<=	9'h156;			// V
-	LCD_LINE2+7:	LUT_DATA	<=	9'h13A; 			// :
-	LCD_LINE2+8:	LUT_DATA	<=	decoder(z1);	//z1
-	LCD_LINE2+9:	LUT_DATA	<=	decoder(z2);	//z2
-	LCD_LINE2+10:	LUT_DATA	<=	decoder(z3);	//z3
-	LCD_LINE2+11:	LUT_DATA	<=	decoder(z4);	//z4
-	LCD_LINE2+12:	LUT_DATA	<=	decoder(z5);	//z5
-	LCD_LINE2+13:	LUT_DATA	<=	decoder(z6);	//z6
-	LCD_LINE2+14:	LUT_DATA	<=	decoder(z7);	//z7
-	LCD_LINE2+15:	LUT_DATA	<=	decoder(z8);	//z8
+	LCD_LINE2+0:	LUT_DATA	<=	decoder(fh1);	//	fh1	
+	LCD_LINE2+1:	LUT_DATA	<=	decoder(fh0);	// fh0
+	LCD_LINE2+2:	LUT_DATA	<=	9'h13A;        // :
+	LCD_LINE2+3:	LUT_DATA	<=	decoder(fm1);  // fm1
+	LCD_LINE2+4:	LUT_DATA	<=	decoder(fm0);  // fm0
+	LCD_LINE2+5:	LUT_DATA	<=	9'h13A;        // :
+	LCD_LINE2+6:	LUT_DATA	<=	decoder(fs1);  // fs1
+	LCD_LINE2+7:	LUT_DATA <= decoder(fs0);	// fs0
 	default:		LUT_DATA	<=	9'h120;
 	endcase
 end
@@ -155,13 +137,8 @@ function [8:0] decoder(input [3:0] BCD);
 				 (( BCD == 7 ) ? 9'b1_0011_0111 :
 				 (( BCD == 8 ) ? 9'b1_0011_1000 :
 				 (( BCD == 9 ) ? 9'b1_0011_1001 :
-				 (( BCD == 10 ) ? 9'b1_0100_0001 :
-				 (( BCD == 11 ) ? 9'b1_0100_0010 :
-				 (( BCD == 12 ) ? 9'b1_0100_0011 :
-				 (( BCD == 13 ) ? 9'b1_0100_0100 :
-				 (( BCD == 14 ) ? 9'b1_0100_0101 :
-				 (( BCD == 15 ) ? 9'b1_0100_0110 :
 				 9'b1_0011_0000
-				 )))))))))))))));
+				 )))))))));
 endfunction
-endmodule 
+
+endmodule
