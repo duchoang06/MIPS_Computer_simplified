@@ -1,25 +1,34 @@
 /*
-PIN Assignments:
-SYS_clk: CLK50;
-SYS_rst: KEY[0];
-SYS_load: KEY[1];
-SYS_pc_val: SW[7:0]
-SYS_output_sel: SW[14:8] or via IR.
-SYS_leds: LEDG, LEDR.
-SYS_hex0: HEX[0]
-....
-SYS_hex7: HEX[7]
+	* PIN Assignments:
+	* SYS_clk: CLK50;
+	* SYS_rst: KEY[0];
+	* SYS_load: KEY[1];
+	* SYS_pc_val: SW[7:0]
+	* SYS_output_sel: SW[14:8] or via IR.
+	* SYS_leds: LEDG, LEDR.
+	* SYS_hex0: HEX[0]
+	....
+	* SYS_hex7: HEX[7]
 */
 
+/*
+	* Missing functions:
+	* No PC load
+	* 
+*/
 module system
 	(
-		input SYS_clk,
+		input SYS_clk_in,
 		input SYS_rst,
 		input SYS_load,
 		input [7:0] SYS_pc_val, /// use SYS_load to load value into PC[8..0]
-		output [7:0] SYS_leds,
 		
-		input [7:0] SYS_output_sel,
+		
+		input [7:0] SYS_output_sel,		
+
+		// LED indicator
+		output [7:0] SYS_leds,
+		output EH_led;
 		
 		// LCD module
 		output [7:0] LCD_DATA,
@@ -34,6 +43,7 @@ module system
 	wire [3:0] ALU_control;
 	wire [1:0] ALU_op;
 	wire [7:0] ALU_status;
+	reg SYS_clk;
 	
 	// datapath wires
 	wire [7:0] PC;
@@ -43,19 +53,41 @@ module system
 	wire [31:0] ALU_result;
 	wire [31:0] Mem_Out;
 	
-	assign SYS_clk = EH_flag ? 0 : SYS_clk;
+	// Controlling signal block
+	always @(negedge SYS_rst, posedge EH_flag, posedge SYS_clk_in) begin
+		if (!SYS_rst) begin
+			SYS_clk <= SYS_clk_in;
+		end
+		else if (EH_flag) begin
+			SYS_clk <= SYS_clk;
+		end
+		else begin
+			SYS_clk <= SYS_clk_in;
+		end	
+	end
 	
-	assign PC_f = (!SYS_load) ? SYS_pc_val : PC;			// Actually do we need this? 
+
+	// Exception LED indicator
+	assign EH_Led = EH_flag;
 	
+	// PC Load from switch LED indicator
+	assign SYS_leds = SYS_pc_val;
+	
+	// Load PC from switch
 	wire [7:0] PC_f;
-	IMEM
+	assign PC_f = (SYS_load) ? 
+					  (!SYS_rst ? 7'b000_0000
+						: SYS_pc_val ): PC;			// Actually do we need this? 
+
+	// Begin of sub-modules
+	IMEM uIMEM
 	(
 		.IMEM_PC(PC_f),
 		.IMEM_instruction(instruction),
 		.IMEM_clk(SYS_clk)
 	);
 	
-	REG
+	REG uREG
 	(
 		.REG_address1(instruction[25:21]),
 		.REG_address2(instruction[20:16]),
@@ -68,7 +100,7 @@ module system
 	);
 	
 	wire [31:0] ALU_operand_2;
-	ALU
+	ALU uALU
 	(
 		.ALU_ctrl(ALU_control),
 		.ALU_operand_1(Reg_Out_1),
@@ -77,7 +109,7 @@ module system
 		.ALU_status(ALU_status)
 	);
 	
-	DMEM
+	DMEM uDMEM
 	(
 		.DMEM_address(ALU_result[7:0]), 
 		.DMEM_data_in(Reg_Out2),
@@ -87,7 +119,7 @@ module system
 		.DMEM_data_out(Mem_Out)
 	);
 	
-	control
+	control ucontrol
 	(
 		.opcode(instruction[31:26]),
 		.control_signal(control_signal)
@@ -105,14 +137,14 @@ module system
 	assign Branch = control_signal[9];
 	assign Jump = control_signal[10];
 	
-	ALU_control 
+	ALU_control uALU_control
 	(
 		.ALU_control_opcode(ALU_op),
 		.ALU_control_funct(instruction[5:0]),
 		.ALU_control_out(ALU_control)
 	);
 
-	Exception_Handle
+	Exception_Handle uException_Handle
 	(
 		.EH_overflow(ALU_status[6]),
 		.EH_Invalid_addr(ALU_status[3]),
@@ -133,7 +165,7 @@ module system
 	assign Reg_Write = (Reg_Dst) ? instruction[15:11] : instruction[20:16];
 	
 	wire [31:0] Sign_Ext_out;
-	module Sign_Ext
+	Sign_Ext uSign_Ext
 	(
 		.Sign_Ext_immediate(instruction[15:0]),
 		.Sign_Ext_out(Sign_Ext_out)
@@ -166,7 +198,7 @@ module system
 	and and0, Branch, ALU_status[7];
 	
 	wire [7:0] EPC;
-	EPC
+	EPC uEPC
 	(
 		.EPC_flag(EH_flag),
 		.EPC_PC(PC),
@@ -174,8 +206,8 @@ module system
 	);
 	
 	// LCD display
-	reg [3:0] x1, x2, x3, x4, x5, x6, x7, x8, z1, z2, z3, z4, z5, z6, z7, z8, y;
-	LCD_TEST 
+	wire [3:0] x1, x2, x3, x4, x5, x6, x7, x8, z1, z2, z3, z4, z5, z6, z7, z8, y;
+	LCD_TEST uLCD_TEST
 	(	
 		.iCLK(SYS_clk), .iRST_N(1'b1),
 		.LCD_DATA(LCD_DATA), .LCD_RW(LCD_RW), .LCD_EN(LCD_EN), .LCD_RS(LCD_RS),
@@ -185,13 +217,13 @@ module system
 	);
 	
 	// Select output to be displayed
-	wire temp1;
+	wire [31:0] temp1;
 	assign temp1 = {24'd0, ALU_status};
-	wire temp2;
+	wire [31:0] temp2;
 	assign temp2 = {21'd0, control_signal};
-	wire temp3;
+	wire [31:0] temp3;
 	assign temp3 = {28'd0, ALU_control};
-	module LCD_Selector
+	LCD_Selector uLCD_selector
 	(
 		.PC(PC), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
 		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(EPC), .output_sel(SYS_output_sel),
