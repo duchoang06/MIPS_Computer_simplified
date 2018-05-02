@@ -10,7 +10,7 @@ module EPC
 			EPC_PC_prev = EPC_PC - 1'b1;
 		end
 		else begin
-			EPC_PC_prev = 8'b0;
+			EPC_PC_prev = 8'd0;
 		end
 	end
 	

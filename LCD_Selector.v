@@ -1,6 +1,6 @@
 module LCD_Selector
 	(
-		PC,IMEM_data, REG_data, ALU_data, ALU_status_data, DMEM_data, control_data, ALU_control_data, EPC_data output_sel,
+		PC,IMEM_data, REG_data, ALU_data, ALU_status_data, DMEM_data, control_data, ALU_control_data, EPC_data, output_sel,
 		ox1, ox2, ox3, ox4, ox5, ox6, ox7, ox8, oy, oz1, oz2, oz3, oz4, oz5, oz6, oz7, oz8
 	);
 	

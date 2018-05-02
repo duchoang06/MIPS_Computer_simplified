@@ -20,7 +20,16 @@ module control
 	parameter RegDst = 			1'b1;	// bit 0
 	
 	// parameterized opcode for instructions
-	parameter add, _nor, _or, slt, sll, sltu, srl, sub, jr, _xor = 6'd0;
+	parameter add = 6'd0;
+	parameter _nor = 6'd0;
+	parameter _or = 6'd0;
+	parameter slt = 6'd0;
+	parameter sll = 6'd0;
+	parameter sltu = 6'd0;
+	parameter srl = 6'd0;
+	parameter sub = 6'd0;
+	parameter jr = 6'd0;
+	parameter _xor = 6'd0;
 	parameter addi = 6'd8;
 	parameter lw = 6'd35;
 	parameter sw = 6'd43;
@@ -45,13 +54,13 @@ module control
 		add, sub, _xor, _or, _nor, slt, sltu, sll, srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ~ALUsrc, RegWrite, RegDst};
 		lw, lbu, lhu: control_signal = {~Jump, ~Branch, MemRead, ~MemWrite, Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, ~RegDst};
 		sw, sb, sh: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
-		andi, subi, ori, addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
+		andi, ori, addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
 		jr: control_signal = {Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, RegWrite, RegDst};
 		j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		bne, beq: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		//jal: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		slti, slti: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ALUsrc, RegWrite, RegDst}; // ALUsrc
-		lui: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
+		//lui: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
 		
 		default: control_signal = control_signal;
 		endcase

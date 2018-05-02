@@ -12,8 +12,6 @@ module REG
 
 	reg [31:0] REG_mem [31:0];
 	
-	always REG_mem[0] = 32'b0;
-	
 	always @(posedge REG_clk) begin
 		if (REG_write_1) begin
 			REG_mem[REG_address_wr] <= REG_data_wr_in1; 

@@ -28,7 +28,7 @@ module system
 
 		// LED indicator
 		output [7:0] SYS_leds,
-		output EH_led;
+		output EH_led,
 		
 		// LCD module
 		output [7:0] LCD_DATA,
@@ -52,6 +52,7 @@ module system
 	wire [31:0] Reg_Out1, Reg_Out2;
 	wire [31:0] ALU_result;
 	wire [31:0] Mem_Out;
+	wire [5:0] Write_Reg;
 	
 	// Controlling signal block
 	always @(negedge SYS_rst, posedge EH_flag, posedge SYS_clk_in) begin
@@ -91,7 +92,7 @@ module system
 	(
 		.REG_address1(instruction[25:21]),
 		.REG_address2(instruction[20:16]),
-		.REG_address_wr(instruction[15:11]),
+		.REG_address_wr(Write_Reg),
 		.REG_write_1(Reg_Write),
 		.REG_data_wr_in1(Data_Write),
 		.REG_data_out1(Reg_Out1),
@@ -158,11 +159,11 @@ module system
 	assign Mem_Read_f = (EH_flag) ? 0 : Mem_Read;
 	assign Mem_Write_f = (EH_flag) ? 0 : Mem_Write;
 	
-	// Selection between ALU_result and Mem_out
-	assign Data_Write = (Mem2Reg_f) ? Mem_out : ALU_result;
+	// Selection between ALU_result and Mem_Out
+	assign Data_Write = (Mem2Reg_f) ? Mem_Out : ALU_result;
 	
 	// Selection between instruction[20:16] and [15:11]
-	assign Reg_Write = (Reg_Dst) ? instruction[15:11] : instruction[20:16];
+	assign Write_Reg = (Reg_Dst) ? instruction[15:11] : instruction[20:16];
 	
 	wire [31:0] Sign_Ext_out;
 	Sign_Ext uSign_Ext
@@ -191,11 +192,11 @@ module system
 	assign w0 = (and0) ? sum2 : sum1;
 
 	// selection between w0 and sum3
-	assign PC = (Jump) ? : sum3: w0;
+	assign PC = (Jump) ? sum3 : w0;
 	
 	// and between Branch and ALU_status (Zero)
 	wire and0;
-	and and0, Branch, ALU_status[7];
+	and (and0, Branch, ALU_status[7]);
 	
 	wire [7:0] EPC;
 	EPC uEPC

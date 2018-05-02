@@ -8,16 +8,17 @@ module system_INTERFACE
 	output [7:0] LEDG;
 	output [0:0] LEDR;
 	output [7:0] LCD_DATA;
-	output LCD_EN, LCD_RS, LCD_RW;
+	output LCD_EN, LCD_RS, LCD_RW, LCD_ON;
 	
 	system interface
 	(
-		.SYS_clk(KEY[0]),
+		.SYS_clk_in(KEY[0]),
 		.SYS_rst(KEY[3]),
 		.SYS_load(SW[9]),
 		.SYS_pc_val(SW[17:10]), /// use SYS_load to load value into PC[8..0]
 		.SYS_leds(LEDG[7:0]),
 		.SYS_output_sel(SW[7:0]),
+		.EH_led(LEDR[0]),
 		
 		// LCD module
 		.LCD_DATA(LCD_DATA),

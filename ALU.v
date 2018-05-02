@@ -13,10 +13,10 @@ module ALU
 		case (ALU_ctrl) 
 		4'b0010: ALU_result = ALU_operand_1 + ALU_operand_2;
 		4'b0110: ALU_result = ALU_operand_1 - ALU_operand_2;
-		4'b0000: ALU_result = ALU_operand_1 & ALU_operand_2;
-		4'b0001: ALU_result = ALU_operand_1 | ALU_operand_2;
+		4'b0000: ALU_result = ALU_operand_1 & ALU_operand_2; // and
+		4'b0001: ALU_result = ALU_operand_1 | ALU_operand_2; // or
 		4'b0111: ALU_result = (ALU_operand_1 < ALU_operand_2)?32'd1:32'd0;
-		4'b1100: ALU_result = ~(ALU_operand_1 | ALU_operand_2);
+		4'b1100: ALU_result = ~(ALU_operand_1 | ALU_operand_2); // nor
 		4'b1000: ALU_result = ALU_operand_1 * ALU_operand_2; // mul
 		4'b1001: ALU_result = ALU_operand_1 / ALU_operand_2; // div
 		4'b1010: ALU_result = ALU_operand_1 ^ ALU_operand_2; // xor
@@ -28,19 +28,28 @@ module ALU
 		if (ALU_result == 0) begin // zero
 			ALU_status[7] = 1'b1;
 		end
-		else if () begin // overflow
+		else if ((ALU_operand_1[31] == 0 && ALU_operand_2[31] == 0 &&  ALU_result[31] == 1 && ALU_ctrl == 4'b0010)
+		|| (ALU_operand_1[31] == 1 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b0010)
+		|| (ALU_operand_1[31] == 0 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 1 && ALU_ctrl == 4'b0110)
+		|| (ALU_operand_1[31] == 1 && ALU_operand_2[31] == 0 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b0110)
+		// multiplication overflow handler
+		|| (ALU_operand_1[31] == 1 && ALU_operand_2[31] == 0 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b1000)
+		|| (ALU_operand_1[31] == 0 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b1000)
+		|| (ALU_operand_1[31] == 0 && ALU_operand_2[31] == 0 &&  ALU_result[31] == 1 && ALU_ctrl == 4'b1000)
+		|| (ALU_operand_1[31] == 1 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b1000)		
+		) begin // overflow
 			
 		end
-		else if () begin // carry
+		//else if (/*condition here*/) begin // carry
 			
-		end
+		//end
 		else if (ALU_result[31] == 1'b1) begin // negative
 			ALU_status[4] = 1'b1;
 		end
-		else if () begin // invalid_address
+		//else if () begin // invalid_address
 			
-		end
-		else if ((ALU_ctrl == 1001) && (ALU_operand_2 == 0)) begin // divide by zero
+		//end
+		else if ((ALU_ctrl == 4'b1001) && (ALU_operand_2 == 32'd0)) begin // divide by zero
 			ALU_status[2] = 1'b1;
 		end
 		else begin
