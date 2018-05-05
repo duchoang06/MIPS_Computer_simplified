@@ -112,7 +112,7 @@ begin
 	LCD_LINE2+0:	LUT_DATA	<=	9'h14F;			// O
 	LCD_LINE2+1:	LUT_DATA	<=	9'h153; 			// S 
 	LCD_LINE2+2:	LUT_DATA	<=	9'h13A; 			// :
-	LCD_LINE2+3:	LUT_DATA	<=	decoder(y);		//y
+	LCD_LINE2+3:	LUT_DATA	<=	decoder(y);		// y
 	LCD_LINE2+4:	LUT_DATA	<= 9'h120;			// <space>
 	LCD_LINE2+5:	LUT_DATA	<=	9'h14F;			// O
 	LCD_LINE2+6:	LUT_DATA	<=	9'h156;			// V

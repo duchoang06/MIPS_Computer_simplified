@@ -1,8 +1,9 @@
 module system_INTERFACE
 	(
-		SW, KEY, LCD_DATA, LCD_EN, LCD_ON, LCD_RS, LCD_RW, LEDG, LEDR
+		SW, KEY, LCD_DATA, LCD_EN, LCD_ON, LCD_RS, LCD_RW, LEDG, LEDR, CLOCK_50
 	);
 	
+	input CLOCK_50;
 	input [17:0] SW;
 	input [3:0] KEY;
 	output [7:0] LEDG;
@@ -12,6 +13,7 @@ module system_INTERFACE
 	
 	system interface
 	(
+		.LCD_CLK(CLOCK_50),
 		.SYS_clk_in(KEY[0]),
 		.SYS_rst(KEY[3]),
 		.SYS_load(SW[9]),

@@ -5,13 +5,13 @@ module IMEM
 		input IMEM_clk
 	);
 	
-	reg [31:0] IMEM_mem [0:255];
+	reg [31:0] IMEM_mem [0:255]; // a word
 
 	// load instructions from file
 	initial begin
 		$readmemb("IMEM_mem.bin", IMEM_mem);
+		IMEM_PC = 8'd0;
 	end
-	
 
 	always @(posedge IMEM_clk) begin
 		IMEM_instruction <= IMEM_mem[IMEM_PC];

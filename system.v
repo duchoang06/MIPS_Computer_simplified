@@ -22,7 +22,7 @@ module system
 		input SYS_rst,
 		input SYS_load,
 		input [7:0] SYS_pc_val, /// use SYS_load to load value into PC[8..0]
-		
+		input LCD_CLK,
 		
 		input [7:0] SYS_output_sel,		
 
@@ -43,7 +43,7 @@ module system
 	wire [3:0] ALU_control;
 	wire [1:0] ALU_op;
 	wire [7:0] ALU_status;
-	reg SYS_clk;
+	wire SYS_clk;
 	
 	// datapath wires
 	wire [7:0] PC;
@@ -55,7 +55,7 @@ module system
 	wire [5:0] Write_Reg;
 	
 	// Controlling signal block
-	always @(negedge SYS_rst, posedge EH_flag, posedge SYS_clk_in) begin
+	/*always @(negedge SYS_rst, posedge EH_flag, posedge SYS_clk_in) begin
 		if (!SYS_rst) begin
 			SYS_clk <= SYS_clk_in;
 		end
@@ -65,7 +65,11 @@ module system
 		else begin
 			SYS_clk <= SYS_clk_in;
 		end	
-	end
+	end*/
+	
+	// debugging:
+	assign SYS_clk = SYS_clk_in;
+	
 	
 
 	// Exception LED indicator
@@ -76,10 +80,14 @@ module system
 	
 	// Load PC from switch
 	wire [7:0] PC_f;
-	assign PC_f = (SYS_load) ? 
+	assign PC_f = PC;
+	
+	
+	/*assign PC_f = (SYS_load) ? 
 					  (!SYS_rst ? 7'b000_0000
-						: SYS_pc_val ): PC;			// Actually do we need this? 
+						: SYS_pc_val ): PC;			// Actually do we need this? */
 
+						
 	// Begin of sub-modules
 	IMEM uIMEM
 	(
@@ -210,7 +218,7 @@ module system
 	wire [3:0] x1, x2, x3, x4, x5, x6, x7, x8, z1, z2, z3, z4, z5, z6, z7, z8, y;
 	LCD_TEST uLCD_TEST
 	(	
-		.iCLK(SYS_clk), .iRST_N(1'b1),
+		.iCLK(LCD_CLK), .iRST_N(1'b1),
 		.LCD_DATA(LCD_DATA), .LCD_RW(LCD_RW), .LCD_EN(LCD_EN), .LCD_RS(LCD_RS),
 		.x1(x1), .x2(x), .x3(x3), .x4(x4), .x5(x5), .x6(x6), .x7(x7), .x8(x8),
 		.z1(z1), .z2(z2), .z3(z3), .z4(z4), .z5(z5), .z6(z7), .z7(z7), .z8(z8),
@@ -218,16 +226,24 @@ module system
 	);
 	
 	// Select output to be displayed
+	wire [31:0] temp0;
+	assign temp0 = {24'd0, PC};
 	wire [31:0] temp1;
 	assign temp1 = {24'd0, ALU_status};
 	wire [31:0] temp2;
 	assign temp2 = {21'd0, control_signal};
 	wire [31:0] temp3;
 	assign temp3 = {28'd0, ALU_control};
+	wire [31:0] temp4;
+	assign temp4 = {24'd0, EPC};
+	wire [31:0] temp5;
+	assign temp5 = {24'd0, SYS_output_sel};
+	
+	
 	LCD_Selector uLCD_selector
 	(
-		.PC(PC), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
-		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(EPC), .output_sel(SYS_output_sel),
+		.PC(temp0), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
+		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(temp5),
 		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
 		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
 	);

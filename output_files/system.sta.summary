@@ -2,136 +2,112 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'KEY[3]'
-Slack : -35.871
-TNS   : -13264.319
+Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
+Slack : -44.660
+TNS   : -401.480
 
 Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
-Slack : -35.847
-TNS   : -13169.617
+Slack : -39.713
+TNS   : -10545.602
 
 Type  : Slow 1200mV 85C Model Setup 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -12.852
-TNS   : -91.998
+Slack : -9.661
+TNS   : -27.079
 
 Type  : Slow 1200mV 85C Model Hold 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -4.032
-TNS   : -30.772
+Slack : -4.982
+TNS   : -33.516
 
 Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
-Slack : -1.826
-TNS   : -770.301
+Slack : 0.345
+TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'KEY[3]'
-Slack : -1.764
-TNS   : -707.512
-
-Type  : Slow 1200mV 85C Model Recovery 'KEY[0]'
-Slack : -0.671
-TNS   : -0.671
-
-Type  : Slow 1200mV 85C Model Removal 'KEY[0]'
-Slack : 0.510
+Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
+Slack : 0.393
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -6.502
-TNS   : -863.395
+Slack : -8.519
+TNS   : -803.303
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -1670.386
+TNS   : -1589.693
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[3]'
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -1668.886
+TNS   : -79.500
 
-Type  : Slow 1200mV 0C Model Setup 'KEY[3]'
-Slack : -32.598
-TNS   : -12229.230
+Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -40.810
+TNS   : -363.932
 
 Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
-Slack : -32.596
-TNS   : -12186.487
+Slack : -36.280
+TNS   : -9563.641
 
 Type  : Slow 1200mV 0C Model Setup 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -11.750
-TNS   : -85.053
+Slack : -8.763
+TNS   : -25.145
 
 Type  : Slow 1200mV 0C Model Hold 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -3.722
-TNS   : -28.718
+Slack : -4.669
+TNS   : -31.586
 
 Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
-Slack : -1.721
-TNS   : -791.333
+Slack : 0.205
+TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'KEY[3]'
-Slack : -1.684
-TNS   : -753.445
-
-Type  : Slow 1200mV 0C Model Recovery 'KEY[0]'
-Slack : -0.491
-TNS   : -0.491
-
-Type  : Slow 1200mV 0C Model Removal 'KEY[0]'
-Slack : 0.489
+Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.345
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -5.914
-TNS   : -744.281
+Slack : -7.693
+TNS   : -690.843
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -1670.298
+TNS   : -1589.649
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -1668.798
+TNS   : -79.500
 
-Type  : Fast 1200mV 0C Model Setup 'KEY[3]'
-Slack : -17.399
-TNS   : -6449.508
+Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
+Slack : -21.677
+TNS   : -173.079
 
 Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
-Slack : -17.397
-TNS   : -6427.282
+Slack : -19.504
+TNS   : -4774.139
 
 Type  : Fast 1200mV 0C Model Setup 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -6.636
-TNS   : -46.158
+Slack : -4.838
+TNS   : -13.892
 
 Type  : Fast 1200mV 0C Model Hold 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -2.068
-TNS   : -15.826
+Slack : -2.472
+TNS   : -16.651
 
 Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
-Slack : -1.357
-TNS   : -818.374
+Slack : -0.137
+TNS   : -0.526
 
-Type  : Fast 1200mV 0C Model Hold 'KEY[3]'
-Slack : -1.339
-TNS   : -799.834
-
-Type  : Fast 1200mV 0C Model Recovery 'KEY[0]'
-Slack : -0.574
-TNS   : -0.574
-
-Type  : Fast 1200mV 0C Model Removal 'KEY[0]'
-Slack : 0.232
+Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
+Slack : 0.175
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'system:interface|IMEM:uIMEM|altsyncram:IMEM_mem_rtl_0|altsyncram_mf61:auto_generated|ram_block1a0~porta_address_reg0'
-Slack : -3.186
-TNS   : -317.291
+Slack : -4.261
+TNS   : -280.940
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -1542.618
+TNS   : -1191.627
 
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[3]'
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -1530.373
+TNS   : -54.922
 
 ------------------------------------------------------------

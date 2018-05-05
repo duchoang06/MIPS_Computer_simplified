@@ -5,9 +5,9 @@ module EPC
 		output reg [7:0] EPC_PC_prev
 	);
 	
-	always @(*) begin
+	always @(EPC_flag) begin
 		if (EPC_flag) begin
-			EPC_PC_prev = EPC_PC - 1'b1;
+			EPC_PC_prev = EPC_PC - 8'd1;
 		end
 		else begin
 			EPC_PC_prev = 8'd0;

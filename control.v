@@ -71,3 +71,7 @@ endmodule
 /* Modifications to prototype notes:
 	#1: output -> output reg	
 */
+
+/*
+	* sll: using Rs, Rt instead => instruction[15:0] enterted sign extend module, use [10:6] (condition: op
+*/
