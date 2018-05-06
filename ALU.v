@@ -8,10 +8,14 @@ module ALU
 	);
 	
 	initial ALU_status = 8'b0000_0000;
+	reg [32:0] add_carry;
 	
 	always @(ALU_ctrl) begin
 		case (ALU_ctrl) 
-		4'b0010: ALU_result = ALU_operand_1 + ALU_operand_2;
+		4'b0010: begin
+						ALU_result = ALU_operand_1 + ALU_operand_2;
+						add_carry = ALU_operand_1 + ALU_operand_2;
+					end
 		4'b0110: ALU_result = ALU_operand_1 - ALU_operand_2;
 		4'b0000: ALU_result = ALU_operand_1 & ALU_operand_2; // and
 		4'b0001: ALU_result = ALU_operand_1 | ALU_operand_2; // or
@@ -40,9 +44,9 @@ module ALU
 		) begin // overflow
 			
 		end
-		//else if (/*condition here*/) begin // carry
-			
-		//end
+		else if (add_carry[32] == 1'b1) begin // carry
+			ALU_status[5] = 1'b1;
+		end
 		else if (ALU_result[31] == 1'b1) begin // negative
 			ALU_status[4] = 1'b1;
 		end
