@@ -6,6 +6,6 @@ module mux_32bits
 		output [31:0] REG_out
 	);
 	
-	assign REG_out = (sel == 1'b0) ? REG_in1 : REG_in2;
+	assign REG_out = ~sel ? REG_in1 : REG_in2;
 	
 endmodule
