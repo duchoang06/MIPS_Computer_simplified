@@ -10,7 +10,6 @@ module IMEM
 	// load instructions from file
 	initial begin
 		$readmemb("IMEM_mem.bin", IMEM_mem);
-		IMEM_PC = 8'd0;
 	end
 
 	always @(posedge IMEM_clk) begin

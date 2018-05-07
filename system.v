@@ -1,21 +1,3 @@
-/*
-	* PIN Assignments:
-	* SYS_clk: CLK50;
-	* SYS_rst: KEY[0];
-	* SYS_load: KEY[1];
-	* SYS_pc_val: SW[7:0]
-	* SYS_output_sel: SW[14:8] or via IR.
-	* SYS_leds: LEDG, LEDR.
-	* SYS_hex0: HEX[0]
-	....
-	* SYS_hex7: HEX[7]
-*/
-
-/*
-	* Missing functions:
-	* No PC load
-	* 
-*/
 module system
 	(
 		input SYS_clk_in,
@@ -35,8 +17,16 @@ module system
 		output LCD_ON,
 		output LCD_RS, 
 		output LCD_RW,
-		output LCD_EN
-	);
+		output LCD_EN,
+		output [6:0] hex0,
+		output [6:0] hex1,
+		output [6:0] hex2,
+		output [6:0] hex3,
+		output [6:0] hex4,
+		output [6:0] hex5,
+		output [6:0] hex6,
+		output [6:0] hex7
+		);
 	
 	// controller wires
 	wire EH_flag, Reg_Write, Mem_Write, Mem_Read, Reg_Dst, ALU_src, Exception, Mem2Reg, Jump, Branch, Mem2Reg_f;
@@ -238,6 +228,48 @@ module system
 	assign temp4 = {24'd0, EPC};
 	wire [31:0] temp5;
 	assign temp5 = {24'd0, SYS_output_sel};
+	
+	// HEX indicates PC values
+	LED7SEG_decoder u0
+	(	 
+		.iDIG(PC[0]),								 
+		.oHEX_D(hex0)		
+	);
+	LED7SEG_decoder u1
+	(	 
+		.iDIG(PC[1]),								 
+		.oHEX_D(hex1)		
+	);
+	LED7SEG_decoder u2
+	(	 
+		.iDIG(PC[2]),								 
+		.oHEX_D(hex2)		
+	);
+	LED7SEG_decoder u3
+	(	 
+		.iDIG(PC[3]),								 
+		.oHEX_D(hex3)		
+	);
+	LED7SEG_decoder u4
+	(	 
+		.iDIG(PC[4]),								 
+		.oHEX_D(hex4)		
+	);
+	LED7SEG_decoder u5
+	(	 
+		.iDIG(PC[5]),								 
+		.oHEX_D(hex5)		
+	);
+	LED7SEG_decoder u6
+	(	 
+		.iDIG(PC[6]),								 
+		.oHEX_D(hex6)		
+	);
+	LED7SEG_decoder u7
+	(	 
+		.iDIG(PC[7]),								 
+		.oHEX_D(hex7)		
+	);
 	
 	
 	LCD_Selector uLCD_selector

@@ -1,5 +1,5 @@
 Flow report for system
-Sat May 05 14:41:11 2018
+Mon May 07 09:55:20 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -41,20 +41,20 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Sat May 05 14:41:11 2018       ;
+; Flow Status                        ; Successful - Mon May 07 09:55:20 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; system                                      ;
 ; Top-level Entity Name              ; system_INTERFACE                            ;
 ; Family                             ; Cyclone IV GX                               ;
 ; Device                             ; EP4CGX150DF31C7                             ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 2,333                                       ;
-;     Total combinational functions  ; 1,340                                       ;
-;     Dedicated logic registers      ; 1,107                                       ;
-; Total registers                    ; 1107                                        ;
-; Total pins                         ; 44                                          ;
+; Total logic elements               ; 427                                         ;
+;     Total combinational functions  ; 394                                         ;
+;     Dedicated logic registers      ; 114                                         ;
+; Total registers                    ; 114                                         ;
+; Total pins                         ; 108                                         ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 7,424                                       ;
+; Total memory bits                  ; 896                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
 ; Total GXB Receiver Channel PCS     ; 0                                           ;
 ; Total GXB Receiver Channel PMA     ; 0                                           ;
@@ -69,7 +69,7 @@ agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/05/2018 14:40:44 ;
+; Start date & time ; 05/07/2018 09:54:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; system              ;
 +-------------------+---------------------+
@@ -80,7 +80,7 @@ agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+------------------+----------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name      ; Section Id     ;
 +-------------------------------------+----------------------------------------+---------------+------------------+----------------+
-; COMPILER_SIGNATURE_ID               ; 22095320038240.152550604409260         ; --            ; --               ; --             ;
+; COMPILER_SIGNATURE_ID               ; 10995770589189.152566169700104         ; --            ; --               ; --             ;
 ; EDA_OUTPUT_DATA_FORMAT              ; Verilog Hdl                            ; --            ; --               ; eda_simulation ;
 ; EDA_SIMULATION_TOOL                 ; ModelSim-Altera (Verilog)              ; <None>        ; --               ; --             ;
 ; EDA_TIME_SCALE                      ; 1 ps                                   ; --            ; --               ; eda_simulation ;
@@ -99,8 +99,8 @@ agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:26     ; 1.0                     ; 747 MB              ; 00:00:53                           ;
-; Total                ; 00:00:26     ; --                      ; --                  ; 00:00:53                           ;
+; Analysis & Synthesis ; 00:00:23     ; 1.0                     ; 739 MB              ; 00:00:51                           ;
+; Total                ; 00:00:23     ; --                      ; --                  ; 00:00:51                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
