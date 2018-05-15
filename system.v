@@ -1,6 +1,6 @@
 module system
 	(
-		input SYS_clk_in,
+		input SYS_clk,
 		input SYS_rst,
 		input SYS_load,
 		input [7:0] SYS_pc_val, /// use SYS_load to load value into PC[8..0]
@@ -25,7 +25,8 @@ module system
 		output [6:0] hex4,
 		output [6:0] hex5,
 		output [6:0] hex6,
-		output [6:0] hex7
+		output [6:0] hex7,
+		output [17:1] ledr
 		);
 	
 	// controller wires
@@ -33,7 +34,6 @@ module system
 	wire [3:0] ALU_control;
 	wire [1:0] ALU_op;
 	wire [7:0] ALU_status;
-	wire SYS_clk;
 	
 	// datapath wires
 	wire [7:0] PC;
@@ -44,23 +44,19 @@ module system
 	wire [31:0] Mem_Out;
 	wire [5:0] Write_Reg;
 	
-	// Controlling signal block
-	/*always @(negedge SYS_rst, posedge EH_flag, posedge SYS_clk_in) begin
+	// Notes:
+	// EH_flag controlling needs adding
+	// rst controlling missing
+	
+	// PC controlling
+	always @(posedge SYS_clk, negedge SYS_rst) begin
 		if (!SYS_rst) begin
-			SYS_clk <= SYS_clk_in;
-		end
-		else if (EH_flag) begin
-			SYS_clk <= SYS_clk;
+			PC_current <= 8'd0;
 		end
 		else begin
-			SYS_clk <= SYS_clk_in;
-		end	
-	end*/
-	
-	// debugging:
-	assign SYS_clk = SYS_clk_in;
-	
-	
+			PC_current <= PC_next;
+		end
+	end
 
 	// Exception LED indicator
 	assign EH_Led = EH_flag;
@@ -69,19 +65,14 @@ module system
 	assign SYS_leds = SYS_pc_val;
 	
 	// Load PC from switch
-	wire [7:0] PC_f;
-	assign PC_f = PC;
+	reg [7:0] PC_current;
 	
 	
-	/*assign PC_f = (SYS_load) ? 
-					  (!SYS_rst ? 7'b000_0000
-						: SYS_pc_val ): PC;			// Actually do we need this? */
-
 						
 	// Begin of sub-modules
 	IMEM uIMEM
 	(
-		.IMEM_PC(PC_f),
+		.IMEM_PC(PC_current),
 		.IMEM_instruction(instruction),
 		.IMEM_clk(SYS_clk)
 	);
@@ -177,20 +168,32 @@ module system
 	wire [7:0] sum2;
 	assign sum2 = sum1 + Sign_Ext_out[7:0];  // ISSUE: whether or not using << 2 ?
 	
+	
+	
+	
+	
+	wire [7:0] PC_next;
 	// adder of PC and 1
 	wire [7:0] sum1;
-	assign sum1 = PC + 1; 
+	assign sum1 = PC_current + 1; 
 	
 	// adder of PC+1 and immediate_26, shorted to 8 bits
 	wire [7:0] sum3;
 	assign sum3 = sum1 + instruction[7:0];		// ISSUE: whether or not using << 2 ?
+	
+	
+	
+	
+	
+	
+	
 	
 	// selection between PC+1 and sum2
 	wire [7:0] w0;
 	assign w0 = (and0) ? sum2 : sum1;
 
 	// selection between w0 and sum3
-	assign PC = (Jump) ? sum3 : w0;
+	assign PC_next = (Jump) ? sum3 : w0;
 	
 	// and between Branch and ALU_status (Zero)
 	wire and0;
@@ -200,7 +203,7 @@ module system
 	EPC uEPC
 	(
 		.EPC_flag(EH_flag),
-		.EPC_PC(PC),
+		.EPC_PC(PC_current),
 		.EPC_PC_prev(EPC)
 	);
 	
@@ -217,7 +220,7 @@ module system
 	
 	// Select output to be displayed
 	wire [31:0] temp0;
-	assign temp0 = {24'd0, PC};
+	assign temp0 = {24'd0, PC_current};
 	wire [31:0] temp1;
 	assign temp1 = {24'd0, ALU_status};
 	wire [31:0] temp2;
@@ -226,56 +229,67 @@ module system
 	assign temp3 = {28'd0, ALU_control};
 	wire [31:0] temp4;
 	assign temp4 = {24'd0, EPC};
-	wire [31:0] temp5;
-	assign temp5 = {24'd0, SYS_output_sel};
+//	wire [31:0] temp5;
+//	assign temp5 = {24'd0, SYS_output_sel};
 	
-	// HEX indicates PC values
+	// HEX displays PC values
 	LED7SEG_decoder u0
 	(	 
-		.iDIG(PC[0]),								 
+		.iDIG(PC_current[0]),								 
 		.oHEX_D(hex0)		
 	);
 	LED7SEG_decoder u1
 	(	 
-		.iDIG(PC[1]),								 
+		.iDIG(PC_current[1]),								 
 		.oHEX_D(hex1)		
 	);
 	LED7SEG_decoder u2
 	(	 
-		.iDIG(PC[2]),								 
+		.iDIG(PC_current[2]),								 
 		.oHEX_D(hex2)		
 	);
 	LED7SEG_decoder u3
 	(	 
-		.iDIG(PC[3]),								 
+		.iDIG(PC_current[3]),								 
 		.oHEX_D(hex3)		
 	);
 	LED7SEG_decoder u4
 	(	 
-		.iDIG(PC[4]),								 
+		.iDIG(PC_current[4]),								 
 		.oHEX_D(hex4)		
 	);
 	LED7SEG_decoder u5
 	(	 
-		.iDIG(PC[5]),								 
+		.iDIG(PC_current[5]),								 
 		.oHEX_D(hex5)		
 	);
 	LED7SEG_decoder u6
 	(	 
-		.iDIG(PC[6]),								 
+		.iDIG(PC_current[6]),								 
 		.oHEX_D(hex6)		
 	);
 	LED7SEG_decoder u7
 	(	 
-		.iDIG(PC[7]),								 
+		.iDIG(PC_current[7]),								 
 		.oHEX_D(hex7)		
 	);
 	
 	
+	// LEDR indicates selected values
+	assign ledr = (SYS_output_sel[0] == 1) ? instruction[16:0] : 
+					  (SYS_output_sel[1] == 1) ? Reg_Out2[16:0] :
+					  (SYS_output_sel[2] == 1) ? ALU_result[16:0] :
+					  (SYS_output_sel[3] == 1) ? temp1[16:0] :
+					  (SYS_output_sel[4] == 1) ? Mem_Out[16:0] :
+					  (SYS_output_sel[5] == 1) ? temp2[16:0] :
+					  (SYS_output_sel[6] == 1) ? temp3[16:0] :
+					  (SYS_output_sel[7] == 1) ? temp4[16:0] :
+					  17'd0;
+	
 	LCD_Selector uLCD_selector
 	(
 		.PC(temp0), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
-		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(temp5),
+		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
 		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
 		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
 	);

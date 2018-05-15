@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon May 07 09:49:53 2018
+Fitter Status : Successful - Tue May 15 12:29:47 2018
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : system
 Top-level Entity Name : system_INTERFACE
 Family : Cyclone IV GX
 Device : EP4CGX150DF31C7
 Timing Models : Final
-Total logic elements : 427 / 149,760 ( < 1 % )
-    Total combinational functions : 422 / 149,760 ( < 1 % )
-    Dedicated logic registers : 114 / 149,760 ( < 1 % )
-Total registers : 114
-Total pins : 108 / 508 ( 21 % )
+Total logic elements : 461 / 149,760 ( < 1 % )
+    Total combinational functions : 457 / 149,760 ( < 1 % )
+    Dedicated logic registers : 122 / 149,760 ( < 1 % )
+Total registers : 122
+Total pins : 117 / 508 ( 23 % )
 Total virtual pins : 0
 Total memory bits : 896 / 6,635,520 ( < 1 % )
 Embedded Multiplier 9-bit elements : 0 / 720 ( 0 % )

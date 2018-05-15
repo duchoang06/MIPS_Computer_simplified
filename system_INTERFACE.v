@@ -7,23 +7,23 @@ module system_INTERFACE
 	input [17:0] SW;
 	input [3:0] KEY;
 	output [7:0] LEDG;
-	output [0:0] LEDR;
+	output [17:0] LEDR;
 	output [7:0] LCD_DATA;
 	output LCD_EN, LCD_RS, LCD_RW, LCD_ON;
-	output [7:0] HEX0;
-	output [7:0] HEX1;
-	output [7:0] HEX2;
-	output [7:0] HEX3;
-	output [7:0] HEX4;
-	output [7:0] HEX5;
-	output [7:0] HEX6;
-	output [7:0] HEX7;
+	output [6:0] HEX0;
+	output [6:0] HEX1;
+	output [6:0] HEX2;
+	output [6:0] HEX3;
+	output [6:0] HEX4;
+	output [6:0] HEX5;
+	output [6:0] HEX6;
+	output [6:0] HEX7;
 	
 	
 	system interface
 	(
 		.LCD_CLK(CLOCK_50),
-		.SYS_clk_in(KEY[0]),
+		.SYS_clk(KEY[0]),
 		.SYS_rst(KEY[3]),
 		.SYS_load(SW[9]),
 		.SYS_pc_val(SW[17:10]), /// use SYS_load to load value into PC[8..0]
@@ -38,6 +38,7 @@ module system_INTERFACE
 		.hex5(HEX5),
 		.hex6(HEX6),
 		.hex7(HEX7),
+		.ledr(LEDR[17:1]),
 		
 		// LCD module
 		.LCD_DATA(LCD_DATA),

@@ -1,5 +1,5 @@
 Analysis & Synthesis report for system
-Mon May 07 09:55:20 2018
+Tue May 15 12:30:59 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -16,29 +16,27 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
   8. Analysis & Synthesis RAM Summary
   9. State Machine - |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|mLCD_ST
  10. State Machine - |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|ST
- 11. Logic Cells Representing Combinational Loops
- 12. Registers Removed During Synthesis
- 13. Removed Registers Triggering Further Register Optimizations
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Registers Added for RAM Pass-Through Logic
- 17. Registers Packed Into Inferred Megafunctions
- 18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated
- 20. Parameter Settings for User Entity Instance: system:interface|control:ucontrol
- 21. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST
- 22. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0
- 23. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_0
- 24. altsyncram Parameter Settings by Entity Instance
- 25. Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"
- 26. Port Connectivity Checks: "system:interface|LCD_TEST:uLCD_TEST"
- 27. Port Connectivity Checks: "system:interface|ALU:uALU"
- 28. Port Connectivity Checks: "system:interface|REG:uREG"
- 29. Port Connectivity Checks: "system:interface"
- 30. Post-Synthesis Netlist Statistics for Top Partition
- 31. Elapsed Time Per Partition
- 32. Analysis & Synthesis Messages
- 33. Analysis & Synthesis Suppressed Messages
+ 11. Registers Removed During Synthesis
+ 12. Removed Registers Triggering Further Register Optimizations
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Registers Added for RAM Pass-Through Logic
+ 16. Registers Packed Into Inferred Megafunctions
+ 17. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 18. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated
+ 19. Parameter Settings for User Entity Instance: system:interface|control:ucontrol
+ 20. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST
+ 21. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0
+ 22. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_0
+ 23. altsyncram Parameter Settings by Entity Instance
+ 24. Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"
+ 25. Port Connectivity Checks: "system:interface|LCD_TEST:uLCD_TEST"
+ 26. Port Connectivity Checks: "system:interface|ALU:uALU"
+ 27. Port Connectivity Checks: "system:interface|REG:uREG"
+ 28. Post-Synthesis Netlist Statistics for Top Partition
+ 29. Elapsed Time Per Partition
+ 30. Analysis & Synthesis Messages
+ 31. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -65,16 +63,16 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon May 07 09:55:20 2018       ;
+; Analysis & Synthesis Status        ; Successful - Tue May 15 12:30:59 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; system                                      ;
 ; Top-level Entity Name              ; system_INTERFACE                            ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 427                                         ;
-;     Total combinational functions  ; 394                                         ;
-;     Dedicated logic registers      ; 114                                         ;
-; Total registers                    ; 114                                         ;
-; Total pins                         ; 108                                         ;
+; Total logic elements               ; 461                                         ;
+;     Total combinational functions  ; 428                                         ;
+;     Dedicated logic registers      ; 122                                         ;
+; Total registers                    ; 122                                         ;
+; Total pins                         ; 117                                         ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 896                                         ;
 ; Embedded Multiplier 9-bit elements ; 0                                           ;
@@ -230,15 +228,15 @@ agreement for further details.
 +--------------------------+------------------+
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
-; I/O pins                 ; 108              ;
+; I/O pins                 ; 117              ;
 ; Total memory bits        ; 896              ;
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 0                ;
 ;                          ;                  ;
 ; Maximum fan-out node     ; KEY[0]~input     ;
-; Maximum fan-out          ; 91               ;
-; Total fan-out            ; 1911             ;
-; Average fan-out          ; 2.54             ;
+; Maximum fan-out          ; 99               ;
+; Total fan-out            ; 2079             ;
+; Average fan-out          ; 2.56             ;
 +--------------------------+------------------+
 
 
@@ -247,13 +245,14 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                 ; Entity Name      ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------+------------------+--------------+
-; |system_INTERFACE                            ; 394 (1)             ; 114 (0)                   ; 896         ; 0            ; 0       ; 0         ; 0         ; 108  ; 0            ; |system_INTERFACE                                                                                   ; system_INTERFACE ; work         ;
-;    |system:interface|                        ; 393 (25)            ; 114 (0)                   ; 896         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface                                                                  ; system           ; work         ;
-;       |ALU:uALU|                             ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU                                                         ; ALU              ; work         ;
+; |system_INTERFACE                            ; 428 (1)             ; 122 (0)                   ; 896         ; 0            ; 0       ; 0         ; 0         ; 117  ; 0            ; |system_INTERFACE                                                                                   ; system_INTERFACE ; work         ;
+;    |system:interface|                        ; 427 (52)            ; 122 (8)                   ; 896         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface                                                                  ; system           ; work         ;
+;       |ALU:uALU|                             ; 28 (28)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU                                                         ; ALU              ; work         ;
+;       |ALU_control:uALU_control|             ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU_control:uALU_control                                         ; ALU_control      ; work         ;
 ;       |EPC:uEPC|                             ; 8 (8)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|EPC:uEPC                                                         ; EPC              ; work         ;
 ;       |IMEM:uIMEM|                           ; 4 (4)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|IMEM:uIMEM                                                       ; IMEM             ; work         ;
-;       |LCD_Selector:uLCD_selector|           ; 92 (92)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector                                       ; LCD_Selector     ; work         ;
-;       |LCD_TEST:uLCD_TEST|                   ; 221 (200)           ; 51 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST                                               ; LCD_TEST         ; work         ;
+;       |LCD_Selector:uLCD_selector|           ; 80 (80)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector                                       ; LCD_Selector     ; work         ;
+;       |LCD_TEST:uLCD_TEST|                   ; 225 (204)           ; 51 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST                                               ; LCD_TEST         ; work         ;
 ;          |LCD_Controller:u0|                 ; 21 (21)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0                             ; LCD_Controller   ; work         ;
 ;       |REG:uREG|                             ; 29 (29)             ; 60 (60)                   ; 896         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG                                                         ; REG              ; work         ;
 ;          |altsyncram:REG_mem_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 896         ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_0                                ; altsyncram       ; work         ;
@@ -297,24 +296,6 @@ Encoding Type:  One-Hot
 +-------+-------+-------+-------+------------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Logic Cells Representing Combinational Loops               ;
-+--------------------------------------------------------+---+
-; Logic Cell Name                                        ;   ;
-+--------------------------------------------------------+---+
-; system:interface|sum1[1]~6                             ;   ;
-; system:interface|sum1[0]~7                             ;   ;
-; system:interface|sum1[2]~5                             ;   ;
-; system:interface|sum1[3]~4                             ;   ;
-; system:interface|sum1[4]~3                             ;   ;
-; system:interface|sum1[5]~2                             ;   ;
-; system:interface|sum1[6]~1                             ;   ;
-; system:interface|sum1[7]~0                             ;   ;
-; Number of logic cells representing combinational loops ; 8 ;
-+--------------------------------------------------------+---+
-Note: All cells listed above may not be present at the end of synthesis due to various synthesis optimizations.
-
-
 +--------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                               ;
 +-----------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -324,6 +305,8 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[1,2,5..8]                          ; Stuck at GND due to stuck port data_in                       ;
 ; system:interface|IMEM:uIMEM|IMEM_instruction[20]                                  ; Lost fanout                                                  ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[3]                                 ; Stuck at GND due to stuck port data_in                       ;
+; system:interface|IMEM:uIMEM|IMEM_instruction[2,6,24]                              ; Merged with system:interface|IMEM:uIMEM|IMEM_instruction[29] ;
+; system:interface|IMEM:uIMEM|IMEM_instruction[17,25]                               ; Merged with system:interface|IMEM:uIMEM|IMEM_instruction[15] ;
 ; system:interface|LCD_TEST:uLCD_TEST|mLCD_ST~8                                     ; Lost fanout                                                  ;
 ; system:interface|LCD_TEST:uLCD_TEST|mLCD_ST~9                                     ; Lost fanout                                                  ;
 ; system:interface|LCD_TEST:uLCD_TEST|mLCD_ST~10                                    ; Lost fanout                                                  ;
@@ -332,8 +315,6 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 ; system:interface|LCD_TEST:uLCD_TEST|mLCD_ST~13                                    ; Lost fanout                                                  ;
 ; system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|ST~8                        ; Lost fanout                                                  ;
 ; system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|ST~9                        ; Lost fanout                                                  ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[2,6,29]                              ; Merged with system:interface|IMEM:uIMEM|IMEM_instruction[24] ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[17,25]                               ; Merged with system:interface|IMEM:uIMEM|IMEM_instruction[15] ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[51..58]                            ; Lost fanout                                                  ;
 ; Total Number of Removed Registers = 49                                            ;                                                              ;
 +-----------------------------------------------------------------------------------+--------------------------------------------------------------+
@@ -344,20 +325,15 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------------------------------------+---------------------------+-----------------------------------------------------+
 ; Register name                                    ; Reason for Removal        ; Registers Removed due to This Register              ;
 +--------------------------------------------------+---------------------------+-----------------------------------------------------+
-; system:interface|IMEM:uIMEM|IMEM_instruction[11] ; Stuck at GND              ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[1],  ;
-;                                                  ; due to stuck port data_in ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[51], ;
+; system:interface|IMEM:uIMEM|IMEM_instruction[31] ; Stuck at GND              ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[1],  ;
+;                                                  ; due to stuck port data_in ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[5],  ;
+;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[7],  ;
+;                                                  ;                           ; system:interface|IMEM:uIMEM|IMEM_instruction[20],   ;
+;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[3],  ;
 ;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[52], ;
+;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[54], ;
 ;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[56], ;
-;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[57]  ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[26] ; Stuck at GND              ; system:interface|IMEM:uIMEM|IMEM_instruction[20],   ;
-;                                                  ; due to stuck port data_in ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[54], ;
 ;                                                  ;                           ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[58]  ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[12] ; Stuck at GND              ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[3]   ;
-;                                                  ; due to stuck port data_in ;                                                     ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[13] ; Stuck at GND              ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[5]   ;
-;                                                  ; due to stuck port data_in ;                                                     ;
-; system:interface|IMEM:uIMEM|IMEM_instruction[14] ; Stuck at GND              ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[7]   ;
-;                                                  ; due to stuck port data_in ;                                                     ;
 +--------------------------------------------------+---------------------------+-----------------------------------------------------+
 
 
@@ -366,10 +342,10 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 114   ;
+; Total registers                              ; 122   ;
 ; Number of registers using Synchronous Clear  ; 18    ;
 ; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
 ; Number of registers using Clock Enable       ; 40    ;
 ; Number of registers using Preset             ; 0     ;
@@ -381,34 +357,34 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +----------------------------------------------------+---------+
 ; Inverted Register                                  ; Fan out ;
 +----------------------------------------------------+---------+
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[12] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[14] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[16] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[18] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[20] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[22] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[24] ; 2       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[24] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[26] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[68] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[70] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[72] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[74] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[60] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[62] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[64] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[66] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[28] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[30] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[32] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[34] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[36] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[38] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[40] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[42] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[44] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[60] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[62] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[64] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[66] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[68] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[70] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[72] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[74] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[46] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[48] ; 2       ;
+; system:interface|REG:uREG|REG_mem_rtl_0_bypass[48] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_0_bypass[50] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[28] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[30] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[32] ; 2       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[34] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[12] ; 2       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[14] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[16] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_0_bypass[18] ; 1       ;
 ; Total number of inverted registers = 28            ;         ;
 +----------------------------------------------------+---------+
 
@@ -510,15 +486,20 @@ Note: All cells listed above may not be present at the end of synthesis due to v
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LUT_INDEX[2]            ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LUT_INDEX[3]            ;
 ; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|oDone ;
-; 8:1                ; 31 bits   ; 155 LEs       ; 62 LEs               ; 93 LEs                 ; No         ; |system_INTERFACE|system:interface|ALU:uALU|Mux18                             ;
+; 3:1                ; 12 bits   ; 24 LEs        ; 12 LEs               ; 12 LEs                 ; No         ; |system_INTERFACE|system:interface|ALU:uALU|Mux28                             ;
+; 3:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |system_INTERFACE|system:interface|ALU:uALU|Mux3                              ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |system_INTERFACE|system:interface|ledr[11]                                   ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 15 LEs               ; 0 LEs                  ; No         ; |system_INTERFACE|system:interface|ledr[1]                                    ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; No         ; |system_INTERFACE|system:interface|ledr[7]                                    ;
 ; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|mLCD_ST                 ;
-; 256:1              ; 15 bits   ; 2550 LEs      ; 45 LEs               ; 2505 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector15      ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 8 LEs                ; 332 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector0       ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 16 LEs               ; 324 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector2       ;
-; 256:1              ; 4 bits    ; 680 LEs       ; 16 LEs               ; 664 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector12      ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 16 LEs               ; 324 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector6       ;
+; 66:1               ; 8 bits    ; 352 LEs       ; 16 LEs               ; 336 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector19      ;
+; 256:1              ; 7 bits    ; 1190 LEs      ; 21 LEs               ; 1169 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector28      ;
+; 256:1              ; 3 bits    ; 510 LEs       ; 12 LEs               ; 498 LEs                ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector18      ;
+; 15:1               ; 2 bits    ; 20 LEs        ; 8 LEs                ; 12 LEs                 ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector7       ;
+; 68:1               ; 2 bits    ; 90 LEs        ; 8 LEs                ; 82 LEs                 ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector0       ;
+; 18:1               ; 2 bits    ; 24 LEs        ; 10 LEs               ; 14 LEs                 ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector6       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
 
 
@@ -684,20 +665,19 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-------------------------------------------+----------------------------------------------------+
 
 
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"                                                                                                                                                          ;
-+-------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port                    ; Type   ; Severity ; Details                                                                                                                                                                            ;
-+-------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; PC[31..8]               ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; ALU_status_data[31..8]  ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; control_data[31..11]    ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; ALU_control_data[31..4] ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; EPC_data[31..8]         ; Input  ; Info     ; Stuck at GND                                                                                                                                                                       ;
-; output_sel              ; Input  ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
-; ox2                     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-; oz6                     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                                ;
-+-------------------------+--------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"                                                           ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port                    ; Type   ; Severity ; Details                                                                             ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
+; PC[31..8]               ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ALU_status_data[31..8]  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; control_data[31..11]    ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ALU_control_data[31..4] ; Input  ; Info     ; Stuck at GND                                                                        ;
+; EPC_data[31..8]         ; Input  ; Info     ; Stuck at GND                                                                        ;
+; ox2                     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; oz6                     ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-------------------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -729,46 +709,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "system:interface"                                                                                                                                                     ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port ; Type   ; Severity ; Details                                                                                                                                                               ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; hex0 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex1 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex2 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex3 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex4 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex5 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex6 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-; hex7 ; Output ; Warning  ; Output or bidir port (7 bits) is smaller than the port expression (8 bits) it drives.  The 1 most-significant bit(s) in the port expression will be connected to GND. ;
-+------+--------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 108                         ;
-; cycloneiii_ff         ; 114                         ;
+; boundary_port         ; 117                         ;
+; cycloneiii_ff         ; 122                         ;
+;     CLR               ; 8                           ;
 ;     ENA               ; 22                          ;
 ;     ENA SCLR          ; 18                          ;
 ;     plain             ; 74                          ;
-; cycloneiii_lcell_comb ; 395                         ;
-;     arith             ; 39                          ;
-;         2 data inputs ; 38                          ;
-;         3 data inputs ; 1                           ;
-;     normal            ; 356                         ;
+; cycloneiii_lcell_comb ; 429                         ;
+;     arith             ; 40                          ;
+;         2 data inputs ; 40                          ;
+;     normal            ; 389                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 8                           ;
-;         2 data inputs ; 30                          ;
-;         3 data inputs ; 83                          ;
-;         4 data inputs ; 233                         ;
+;         1 data inputs ; 7                           ;
+;         2 data inputs ; 43                          ;
+;         3 data inputs ; 75                          ;
+;         4 data inputs ; 262                         ;
 ; cycloneiii_ram_block  ; 28                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 11.10                       ;
-; Average LUT depth     ; 6.86                        ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.99                        ;
 +-----------------------+-----------------------------+
 
 
@@ -777,7 +741,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:04     ;
 +----------------+--------------+
 
 
@@ -787,7 +751,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Mon May 07 09:54:57 2018
+    Info: Processing started: Tue May 15 12:30:32 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Computer_simplified -c system
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -819,30 +783,30 @@ Info (12021): Found 1 design units, including 1 entities, in source file lcd_tes
     Info (12023): Found entity 1: LCD_TEST File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file lcd_selector.v
     Info (12023): Found entity 1: LCD_Selector File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 1
-Warning (10463): Verilog HDL Declaration warning at system_INTERFACE.v(48): "interface" is SystemVerilog-2005 keyword File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 48
+Warning (10463): Verilog HDL Declaration warning at system_INTERFACE.v(49): "interface" is SystemVerilog-2005 keyword File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 49
 Info (12021): Found 1 design units, including 1 entities, in source file system_interface.v
     Info (12023): Found entity 1: system_INTERFACE File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 1
-Warning (10236): Verilog HDL Implicit Net warning at system.v(66): created implicit net for "EH_Led" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 66
-Warning (10236): Verilog HDL Implicit Net warning at system.v(105): created implicit net for "Reg_Out_1" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 105
-Warning (10236): Verilog HDL Implicit Net warning at system.v(115): created implicit net for "Mem_Write_f" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 115
-Warning (10236): Verilog HDL Implicit Net warning at system.v(116): created implicit net for "Mem_Read_f" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 116
-Warning (10236): Verilog HDL Implicit Net warning at system.v(213): created implicit net for "x" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 213
+Warning (10236): Verilog HDL Implicit Net warning at system.v(65): created implicit net for "EH_Led" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 65
+Warning (10236): Verilog HDL Implicit Net warning at system.v(99): created implicit net for "Reg_Out_1" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 99
+Warning (10236): Verilog HDL Implicit Net warning at system.v(109): created implicit net for "Mem_Write_f" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 109
+Warning (10236): Verilog HDL Implicit Net warning at system.v(110): created implicit net for "Mem_Read_f" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 110
+Warning (10236): Verilog HDL Implicit Net warning at system.v(219): created implicit net for "x" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 219
 Info (12127): Elaborating entity "system_INTERFACE" for the top level hierarchy
-Info (12128): Elaborating entity "system" for hierarchy "system:interface" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 48
-Warning (10036): Verilog HDL or VHDL warning at system.v(66): object "EH_Led" assigned a value but never read File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 66
-Warning (10230): Verilog HDL assignment warning at system.v(156): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 156
-Warning (10230): Verilog HDL assignment warning at system.v(157): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 157
-Warning (10230): Verilog HDL assignment warning at system.v(158): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 158
-Warning (10230): Verilog HDL assignment warning at system.v(182): truncated value with size 32 to match size of target (8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 182
+Info (12128): Elaborating entity "system" for hierarchy "system:interface" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 49
+Warning (10036): Verilog HDL or VHDL warning at system.v(65): object "EH_Led" assigned a value but never read File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 65
+Warning (10230): Verilog HDL assignment warning at system.v(150): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 150
+Warning (10230): Verilog HDL assignment warning at system.v(151): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 151
+Warning (10230): Verilog HDL assignment warning at system.v(152): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 152
+Warning (10230): Verilog HDL assignment warning at system.v(181): truncated value with size 32 to match size of target (8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 181
 Warning (10034): Output port "EH_led" at system.v(13) has no driver File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 13
 Warning (10034): Output port "LCD_ON" at system.v(17) has no driver File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 17
-Info (12128): Elaborating entity "IMEM" for hierarchy "system:interface|IMEM:uIMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 87
+Info (12128): Elaborating entity "IMEM" for hierarchy "system:interface|IMEM:uIMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 81
 Warning (10850): Verilog HDL warning at IMEM.v(12): number of words (8) in memory file does not match the number of elements in the address range [0:255] File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 12
 Warning (10030): Net "IMEM_mem.data_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (10030): Net "IMEM_mem.waddr_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (10030): Net "IMEM_mem.we_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
-Info (12128): Elaborating entity "REG" for hierarchy "system:interface|REG:uREG" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 99
-Info (12128): Elaborating entity "ALU" for hierarchy "system:interface|ALU:uALU" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 109
+Info (12128): Elaborating entity "REG" for hierarchy "system:interface|REG:uREG" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 93
+Info (12128): Elaborating entity "ALU" for hierarchy "system:interface|ALU:uALU" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 103
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(16): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 16
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(16): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 16
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(17): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 17
@@ -873,75 +837,31 @@ Info (10041): Inferred latch for "ALU_status[5]" at ALU.v(60) File: D:/Study in 
 Info (10041): Inferred latch for "ALU_status[6]" at ALU.v(60) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 60
 Info (10041): Inferred latch for "ALU_status[7]" at ALU.v(60) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 60
 Info (10041): Inferred latch for "result_temp[32]" at ALU.v(13) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 13
-Info (12128): Elaborating entity "DMEM" for hierarchy "system:interface|DMEM:uDMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 119
+Info (12128): Elaborating entity "DMEM" for hierarchy "system:interface|DMEM:uDMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 113
 Warning (10850): Verilog HDL warning at DMEM.v(14): number of words (1024) in memory file does not match the number of elements in the address range [0:255] File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 14
-Info (10041): Inferred latch for "DMEM_data_out[0]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[1]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[2]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[3]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[4]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[5]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[6]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[7]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[8]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[9]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[10]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[11]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[12]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[13]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[14]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[15]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[16]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[17]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[18]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[19]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[20]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[21]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[22]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[23]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[24]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[25]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[26]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[27]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[28]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[29]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[30]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (10041): Inferred latch for "DMEM_data_out[31]" at DMEM.v(17) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Info (12128): Elaborating entity "control" for hierarchy "system:interface|control:ucontrol" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 125
-Warning (10235): Verilog HDL Always Construct warning at control.v(63): variable "control_signal" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 63
-Warning (10240): Verilog HDL Always Construct warning at control.v(52): inferring latch(es) for variable "control_signal", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[0]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[1]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[2]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[3]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[4]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[5]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[6]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[7]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[8]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[9]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (10041): Inferred latch for "control_signal[10]" at control.v(52) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Info (12128): Elaborating entity "ALU_control" for hierarchy "system:interface|ALU_control:uALU_control" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 144
-Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(31): variable "ALU_control_out" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 31
-Warning (10240): Verilog HDL Always Construct warning at ALU_control.v(8): inferring latch(es) for variable "ALU_control_out", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Info (10041): Inferred latch for "ALU_control_out[0]" at ALU_control.v(8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Info (10041): Inferred latch for "ALU_control_out[1]" at ALU_control.v(8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Info (10041): Inferred latch for "ALU_control_out[2]" at ALU_control.v(8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Info (10041): Inferred latch for "ALU_control_out[3]" at ALU_control.v(8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Info (12128): Elaborating entity "Exception_Handle" for hierarchy "system:interface|Exception_Handle:uException_Handle" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 153
+Info (12128): Elaborating entity "control" for hierarchy "system:interface|control:ucontrol" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 119
+Info (12128): Elaborating entity "ALU_control" for hierarchy "system:interface|ALU_control:uALU_control" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 138
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(9): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 9
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(12): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 12
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(15): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 15
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(18): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 18
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(21): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 21
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(24): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 24
+Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(27): variable "ALU_control_funct" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 27
+Info (12128): Elaborating entity "Exception_Handle" for hierarchy "system:interface|Exception_Handle:uException_Handle" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 147
 Warning (10240): Verilog HDL Always Construct warning at Exception_Handle.v(10): inferring latch(es) for variable "EH_flag", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Exception_Handle.v Line: 10
 Info (10041): Inferred latch for "EH_flag" at Exception_Handle.v(10) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Exception_Handle.v Line: 10
-Info (12128): Elaborating entity "Sign_Ext" for hierarchy "system:interface|Sign_Ext:uSign_Ext" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 171
-Info (12128): Elaborating entity "EPC" for hierarchy "system:interface|EPC:uEPC" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 205
+Info (12128): Elaborating entity "Sign_Ext" for hierarchy "system:interface|Sign_Ext:uSign_Ext" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 165
+Info (12128): Elaborating entity "EPC" for hierarchy "system:interface|EPC:uEPC" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 211
 Warning (10235): Verilog HDL Always Construct warning at EPC.v(10): variable "EPC_PC" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/EPC.v Line: 10
-Info (12128): Elaborating entity "LCD_TEST" for hierarchy "system:interface|LCD_TEST:uLCD_TEST" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 216
+Info (12128): Elaborating entity "LCD_TEST" for hierarchy "system:interface|LCD_TEST:uLCD_TEST" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 222
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(66): truncated value with size 32 to match size of target (18) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 66
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(74): truncated value with size 32 to match size of target (6) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 74
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(79): truncated value with size 32 to match size of target (6) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 79
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 144
 Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(68): truncated value with size 32 to match size of target (5) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Controller.v Line: 68
-Info (12128): Elaborating entity "LED7SEG_decoder" for hierarchy "system:interface|LED7SEG_decoder:u0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 237
-Info (12128): Elaborating entity "LCD_Selector" for hierarchy "system:interface|LCD_Selector:uLCD_selector" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 281
+Info (12128): Elaborating entity "LED7SEG_decoder" for hierarchy "system:interface|LED7SEG_decoder:u0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 243
+Info (12128): Elaborating entity "LCD_Selector" for hierarchy "system:interface|LCD_Selector:uLCD_selector" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 298
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(16): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 16
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(17): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 17
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(18): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 18
@@ -1007,43 +927,11 @@ Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(105): va
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(106): variable "EPC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 106
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(107): variable "EPC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 107
 Info (10264): Verilog HDL Case Statement information at LCD_Selector.v(12): all case item expressions in this case statement are onehot File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 12
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[1]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[2]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[3]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[4]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[5]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[6]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[7]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[8]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[9]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[10]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[11]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[12]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[13]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[14]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[15]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[16]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[17]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[18]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[19]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[24]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[25]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[26]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[27]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[28]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[29]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[30]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[31]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
-Warning (14025): LATCH primitive "system:interface|DMEM:uDMEM|DMEM_data_out[0]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 17
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_REG_15692.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "system:interface|REG:uREG|REG_mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276007): RAM logic "system:interface|IMEM:uIMEM|IMEM_mem" is uninferred due to asynchronous read logic File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_IMEM_257482.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Warning (14026): LATCH primitive "system:interface|control:ucontrol|control_signal[2]" is permanently enabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Warning (14026): LATCH primitive "system:interface|control:ucontrol|control_signal[4]" is permanently enabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v Line: 52
-Warning (14025): LATCH primitive "system:interface|ALU_control:uALU_control|ALU_control_out[1]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
-Warning (14025): LATCH primitive "system:interface|ALU_control:uALU_control|ALU_control_out[1]" is permanently disabled File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 8
 Info (19000): Inferred 1 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "system:interface|REG:uREG|REG_mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
@@ -1086,7 +974,7 @@ Warning (14284): Synthesized away the following node(s):
         Warning (14320): Synthesized away node "system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated|ram_block1a21" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_fbg1.tdf Line: 668
         Warning (14320): Synthesized away node "system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated|ram_block1a22" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_fbg1.tdf Line: 698
         Warning (14320): Synthesized away node "system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated|ram_block1a23" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_fbg1.tdf Line: 728
-Warning (12241): 5 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "LCD_ON" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 12
     Warning (13410): Pin "LCD_RW" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 12
@@ -1094,56 +982,47 @@ Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "HEX1[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 14
     Warning (13410): Pin "HEX1[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 14
     Warning (13410): Pin "HEX1[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 14
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 14
     Warning (13410): Pin "HEX0[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 13
     Warning (13410): Pin "HEX0[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 13
     Warning (13410): Pin "HEX0[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 13
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 13
     Warning (13410): Pin "HEX2[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 15
     Warning (13410): Pin "HEX2[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 15
     Warning (13410): Pin "HEX2[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 15
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 15
     Warning (13410): Pin "HEX3[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 16
     Warning (13410): Pin "HEX3[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 16
     Warning (13410): Pin "HEX3[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 16
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 16
     Warning (13410): Pin "HEX4[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 17
     Warning (13410): Pin "HEX4[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 17
     Warning (13410): Pin "HEX4[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 17
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 17
     Warning (13410): Pin "HEX5[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 18
     Warning (13410): Pin "HEX5[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 18
     Warning (13410): Pin "HEX5[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 18
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 18
     Warning (13410): Pin "HEX6[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 19
     Warning (13410): Pin "HEX6[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 19
     Warning (13410): Pin "HEX6[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 19
-    Warning (13410): Pin "HEX6[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 19
     Warning (13410): Pin "HEX7[1]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 20
     Warning (13410): Pin "HEX7[2]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 20
     Warning (13410): Pin "HEX7[6]" is stuck at VCC File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 20
-    Warning (13410): Pin "HEX7[7]" is stuck at GND File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 20
 Info (286030): Timing-Driven Synthesis is running
 Info (17049): 17 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/output_files/system.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Warning (21074): Design contains 5 input pin(s) that do not drive logic
+Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[8]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 7
     Warning (15610): No output dependent on input pin "SW[9]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 7
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 8
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 8
-    Warning (15610): No output dependent on input pin "KEY[3]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 8
-Info (21057): Implemented 593 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 636 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
-    Info (21059): Implemented 85 output pins
-    Info (21061): Implemented 457 logic cells
+    Info (21059): Implemented 94 output pins
+    Info (21061): Implemented 491 logic cells
     Info (21064): Implemented 28 RAM segments
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 199 warnings
-    Info: Peak virtual memory: 749 megabytes
-    Info: Processing ended: Mon May 07 09:55:20 2018
-    Info: Elapsed time: 00:00:23
-    Info: Total CPU time (on all processors): 00:00:51
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 161 warnings
+    Info: Peak virtual memory: 746 megabytes
+    Info: Processing ended: Tue May 15 12:30:59 2018
+    Info: Elapsed time: 00:00:27
+    Info: Total CPU time (on all processors): 00:00:53
 
 
 +------------------------------------------+

@@ -5,7 +5,7 @@ module ALU_control
 		output reg [3:0] ALU_control_out
 	);
 
-	always @(ALU_control_opcode, ALU_control_funct) begin
+	always @(ALU_control_opcode) begin
 		if (ALU_control_opcode == 2'b00 && ALU_control_funct == 6'bx) begin // add for lw/sw
 			ALU_control_out <= 4'b0010;
 		end
@@ -28,7 +28,7 @@ module ALU_control
 			ALU_control_out <= 4'b0111;
 		end
 		else begin
-			ALU_control_out <= ALU_control_out;
+			ALU_control_out <= 4'd0;
 		end
 		
 		// missing control signals: mul, div.

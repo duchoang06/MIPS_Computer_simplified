@@ -94,15 +94,15 @@ begin
 	LCD_LINE1+1:	LUT_DATA	<=	9'h143; 			// C 
 	LCD_LINE1+2:	LUT_DATA	<=	9'h13A; 			// :
 	LCD_LINE1+3:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+4:	LUT_DATA	<=	decoder(x1);	//x1
-	LCD_LINE1+5:	LUT_DATA	<=	decoder(x2);	//x2
-	LCD_LINE1+6:	LUT_DATA	<=	decoder(x3);	//x3
-	LCD_LINE1+7:	LUT_DATA	<=	decoder(x4);	//x4
+	LCD_LINE1+4:	LUT_DATA	<=	decoder(x8);	//x1
+	LCD_LINE1+5:	LUT_DATA	<=	decoder(x7);	//x2
+	LCD_LINE1+6:	LUT_DATA	<=	decoder(x6);	//x3
+	LCD_LINE1+7:	LUT_DATA	<=	decoder(x5);	//x4
 	LCD_LINE1+8:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+9:	LUT_DATA	<=	decoder(x5);	//x5
-	LCD_LINE1+10:	LUT_DATA	<=	decoder(x6);	//x6
-	LCD_LINE1+11:	LUT_DATA	<=	decoder(x7);	//x7
-	LCD_LINE1+12:	LUT_DATA	<=	decoder(x8);	//x8
+	LCD_LINE1+9:	LUT_DATA	<=	decoder(x4);	//x5
+	LCD_LINE1+10:	LUT_DATA	<=	decoder(x3);	//x6
+	LCD_LINE1+11:	LUT_DATA	<=	decoder(x2);	//x7
+	LCD_LINE1+12:	LUT_DATA	<=	decoder(x1);	//x8
 	LCD_LINE1+13:	LUT_DATA	<=	9'h120;			// <space>
 	LCD_LINE1+14:	LUT_DATA	<=	9'h120;			// <space>
 	LCD_LINE1+15:	LUT_DATA	<=	9'h120;			// <space>
@@ -117,14 +117,14 @@ begin
 	LCD_LINE2+5:	LUT_DATA	<=	9'h14F;			// O
 	LCD_LINE2+6:	LUT_DATA	<=	9'h156;			// V
 	LCD_LINE2+7:	LUT_DATA	<=	9'h13A; 			// :
-	LCD_LINE2+8:	LUT_DATA	<=	decoder(z1);	//z1
-	LCD_LINE2+9:	LUT_DATA	<=	decoder(z2);	//z2
-	LCD_LINE2+10:	LUT_DATA	<=	decoder(z3);	//z3
-	LCD_LINE2+11:	LUT_DATA	<=	decoder(z4);	//z4
-	LCD_LINE2+12:	LUT_DATA	<=	decoder(z5);	//z5
-	LCD_LINE2+13:	LUT_DATA	<=	decoder(z6);	//z6
-	LCD_LINE2+14:	LUT_DATA	<=	decoder(z7);	//z7
-	LCD_LINE2+15:	LUT_DATA	<=	decoder(z8);	//z8
+	LCD_LINE2+8:	LUT_DATA	<=	decoder(z8);	//z1
+	LCD_LINE2+9:	LUT_DATA	<=	decoder(z7);	//z2
+	LCD_LINE2+10:	LUT_DATA	<=	decoder(z6);	//z3
+	LCD_LINE2+11:	LUT_DATA	<=	decoder(z5);	//z4
+	LCD_LINE2+12:	LUT_DATA	<=	decoder(z4);	//z5
+	LCD_LINE2+13:	LUT_DATA	<=	decoder(z3);	//z6
+	LCD_LINE2+14:	LUT_DATA	<=	decoder(z2);	//z7
+	LCD_LINE2+15:	LUT_DATA	<=	decoder(z1);	//z8
 	default:		LUT_DATA	<=	9'h120;
 	endcase
 end

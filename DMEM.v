@@ -14,11 +14,11 @@ module DMEM
 		$readmemb("DMEM_mem.bin", DMEM_mem);
 	end
 
-	assign DMEM_data_out = DMEM_mem_read ? DMEM_mem[DMEM_address] : DMEM_data_out;
+	assign DMEM_data_out = DMEM_mem_read ? DMEM_mem[DMEM_address] : 32'd0;
 	
 	always @(posedge DMEM_clk) begin
 		if (DMEM_mem_write) begin
-			DMEM_mem[DMEM_address[7:0]] <= DMEM_data_in;
+			DMEM_mem[DMEM_address] <= DMEM_data_in;
 		end
 		else begin end
 	end

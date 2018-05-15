@@ -1,13 +1,13 @@
-Analysis & Synthesis Status : Successful - Mon May 07 09:55:20 2018
+Analysis & Synthesis Status : Successful - Tue May 15 12:30:59 2018
 Quartus Prime Version : 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 Revision Name : system
 Top-level Entity Name : system_INTERFACE
 Family : Cyclone IV GX
-Total logic elements : 427
-    Total combinational functions : 394
-    Dedicated logic registers : 114
-Total registers : 114
-Total pins : 108
+Total logic elements : 461
+    Total combinational functions : 428
+    Dedicated logic registers : 122
+Total registers : 122
+Total pins : 117
 Total virtual pins : 0
 Total memory bits : 896
 Embedded Multiplier 9-bit elements : 0
