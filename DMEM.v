@@ -11,7 +11,7 @@ module DMEM
 	reg [31:0] DMEM_mem [0:255];
 
 	initial begin
-		$readmemb("DMEM_mem.bin", DMEM_mem);
+		$readmemh("DMEM_mem.hex", DMEM_mem);
 	end
 
 	assign DMEM_data_out = DMEM_mem_read ? DMEM_mem[DMEM_address] : 32'd0;
@@ -24,9 +24,3 @@ module DMEM
 	end
 
 endmodule 
-
-/* Modifications to prototype notes:
-	#1: output -> output reg
-	#2: clk added
-	
-*/

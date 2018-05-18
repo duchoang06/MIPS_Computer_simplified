@@ -4,11 +4,12 @@ module Exception_Handle
 		input EH_Invalid_addr,
 		input EH_Div_zero,
 		input EH_control,
+		input EH_write2_0,
 		output reg EH_flag
 	);
 	
-	always @(EH_overflow, EH_Invalid_addr, EH_Div_zero, EH_control) begin
-		if (EH_overflow || EH_Invalid_addr || EH_Div_zero) begin
+	always @(EH_overflow, EH_Invalid_addr, EH_Div_zero, EH_control, EH_write2_0) begin
+		if (EH_overflow || EH_Invalid_addr || EH_Div_zero || EH_control || EH_write2_0) begin
 			EH_flag <= 1'b1;
 		end
 	end

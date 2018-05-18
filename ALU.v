@@ -3,6 +3,7 @@ module ALU
 		input [3:0] ALU_ctrl,
 		input [31:0] ALU_operand_1,
 		input [31:0] ALU_operand_2,
+		input [4:0] shamnt,
 		output reg [31:0] ALU_result,
 		output reg [7:0] ALU_status
 	);
@@ -24,6 +25,8 @@ module ALU
 		4'b1000: ALU_result = ALU_operand_1 * ALU_operand_2; // mul
 		4'b1001: ALU_result = ALU_operand_1 / ALU_operand_2; // div
 		4'b1010: ALU_result = ALU_operand_1 ^ ALU_operand_2; // xor
+		4'b1100: ALU_result = ALU_operand_1 << shamnt;
+		4'b1101: ALU_result = ALU_operand_1 >> shamnt;
 		default: ALU_result = 32'd0;
 		endcase
 	end
@@ -56,12 +59,12 @@ module ALU
 		if ((ALU_ctrl == 4'b1001) && (ALU_operand_2 == 32'd0)) begin // divide by zero
 			ALU_status[2] = 1'b1;
 		end
+		
 		else begin
 			ALU_status = 8'b0000_0000;
 		end
 	end
 	
-	
-	// opcode for multiplication
+	// log: complete
 	
 endmodule 

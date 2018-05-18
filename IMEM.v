@@ -9,7 +9,7 @@ module IMEM
 
 	// load instructions from file
 	initial begin
-		$readmemb("IMEM_mem.bin", IMEM_mem);
+		$readmemh("IMEM_mem.hex", IMEM_mem);
 	end
 
 	always @(posedge IMEM_clk) begin
@@ -17,9 +17,3 @@ module IMEM
 	end
 endmodule 
 
-
-/* Modifications to prototype notes:
-	#1: output -> output reg
-	
-	
-*/

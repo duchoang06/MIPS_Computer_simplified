@@ -53,24 +53,16 @@ module control
 	
 	always @(opcode) begin
 		case(opcode)
-		add, sub, _xor, _or, _nor, slt, sltu, sll, srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ~ALUsrc, RegWrite, RegDst};
+		add, sub, _xor, _or, _nor, slt, sltu: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ~ALUsrc, RegWrite, RegDst};
 		lw, lbu, lhu: control_signal = {~Jump, ~Branch, MemRead, ~MemWrite, Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, ~RegDst};
 		sw, sb, sh: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
 		andi, ori, addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
 		j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		bne, beq: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		slti, slti: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ALUsrc, RegWrite, RegDst}; // ALUsrc
-		
+		sll, srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ALUsrc, RegWrite, RegDst};
 		default: control_signal = 11'd0;
 		endcase
 	end
 
 endmodule 
-
-/* Modifications to prototype notes:
-	#1: output -> output reg	
-*/
-
-/*
-	* sll: using Rs, Rt instead => instruction[15:0] enterted sign extend module, use [10:6] (condition: op
-*/

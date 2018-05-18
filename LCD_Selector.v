@@ -4,9 +4,11 @@ module LCD_Selector
 		ox1, ox2, ox3, ox4, ox5, ox6, ox7, ox8, oy, oz1, oz2, oz3, oz4, oz5, oz6, oz7, oz8
 	);
 	
-	input [31:0] PC, IMEM_data, REG_data, ALU_data, ALU_status_data, DMEM_data, control_data, ALU_control_data, EPC_data;
+	input [31:0] IMEM_data, REG_data, ALU_data, ALU_status_data, DMEM_data, control_data, ALU_control_data, EPC_data;
+	input [7:0] PC;
 	input [7:0] output_sel;
-	output reg [3:0] ox1, ox2, ox3, ox4, ox5, ox6, ox7, ox8, oy, oz1, oz2, oz3, oz4, oz5, oz6, oz7, oz8;
+	output reg [3:0]  oy, oz1, oz2, oz3, oz4, oz5, oz6, oz7, oz8;
+	output ox1, ox2, ox3, ox4, ox5, ox6, ox7, ox8;
 	
 	always @(output_sel) begin 
 		case (output_sel)
@@ -121,16 +123,13 @@ module LCD_Selector
 		endcase
 	end
 	
-	always @(PC) begin
-		ox1 = PC[3:0];
-		ox2 = PC[7:4];
-		ox3 = PC[11:8];
-		ox4 = PC[15:12];
-		ox5 = PC[19:16];
-		ox6 = PC[23:20];
-		ox7 = PC[27:24];
-		ox8 = PC[31:28];
-	end
-	
+	assign ox1 = PC[0];
+	assign ox2 = PC[1];
+	assign ox3 = PC[2];
+	assign ox4 = PC[3];
+	assign ox5 = PC[4];
+	assign ox6 = PC[5];
+	assign ox7 = PC[6];
+	assign ox8 = PC[7];
 	
 endmodule 

@@ -8,7 +8,8 @@ module LCD_TEST (	// controller
 					
 // input
 input			iCLK,iRST_N;
-input [3:0] x1, x2, x3, x4, x5, x6, x7, x8, y, z1, z2, z3, z4, z5, z6, z7, z8;
+input [3:0] y, z1, z2, z3, z4, z5, z6, z7, z8;
+input x1, x2, x3, x4, x5, x6, x7, x8;
 
 // output
 output	[7:0]	LCD_DATA;
@@ -76,7 +77,7 @@ begin
 				end
 			endcase
 		end
-		else LUT_INDEX <= LCD_LINE1;
+		else LUT_INDEX <= LCD_INTIAL+4;
 	end
 end
 
@@ -94,15 +95,15 @@ begin
 	LCD_LINE1+1:	LUT_DATA	<=	9'h143; 			// C 
 	LCD_LINE1+2:	LUT_DATA	<=	9'h13A; 			// :
 	LCD_LINE1+3:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+4:	LUT_DATA	<=	decoder(x8);	//x1
-	LCD_LINE1+5:	LUT_DATA	<=	decoder(x7);	//x2
-	LCD_LINE1+6:	LUT_DATA	<=	decoder(x6);	//x3
-	LCD_LINE1+7:	LUT_DATA	<=	decoder(x5);	//x4
-	LCD_LINE1+8:	LUT_DATA	<=	9'h120;			// <space>
-	LCD_LINE1+9:	LUT_DATA	<=	decoder(x4);	//x5
-	LCD_LINE1+10:	LUT_DATA	<=	decoder(x3);	//x6
-	LCD_LINE1+11:	LUT_DATA	<=	decoder(x2);	//x7
-	LCD_LINE1+12:	LUT_DATA	<=	decoder(x1);	//x8
+	LCD_LINE1+4:	LUT_DATA	<=	decoder(x8);		//x1
+	LCD_LINE1+5:	LUT_DATA	<=	decoder(x7);		//x2
+	LCD_LINE1+6:	LUT_DATA	<=	decoder(x6);		//x3
+	LCD_LINE1+7:	LUT_DATA	<=	decoder(x5);		//x4
+	LCD_LINE1+8:	LUT_DATA	<=	9'h120;				// <space>
+	LCD_LINE1+9:	LUT_DATA	<=	decoder(x4);		//x5
+	LCD_LINE1+10:	LUT_DATA	<=	decoder(x3);		//x6
+	LCD_LINE1+11:	LUT_DATA	<=	decoder(x2);		//x7
+	LCD_LINE1+12:	LUT_DATA	<=	decoder(x1);		//x8
 	LCD_LINE1+13:	LUT_DATA	<=	9'h120;			// <space>
 	LCD_LINE1+14:	LUT_DATA	<=	9'h120;			// <space>
 	LCD_LINE1+15:	LUT_DATA	<=	9'h120;			// <space>
@@ -164,4 +165,6 @@ function [8:0] decoder(input [3:0] BCD);
 				 9'b1_0011_0000
 				 )))))))))))))));
 endfunction
+
+
 endmodule 
