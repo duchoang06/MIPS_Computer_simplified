@@ -1,5 +1,5 @@
 Analysis & Synthesis report for system
-Sun May 20 22:57:57 2018
+Mon May 21 13:14:33 2018
 Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
 
 
@@ -24,26 +24,25 @@ Quartus Prime Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
  16. Registers Added for RAM Pass-Through Logic
  17. Registers Packed Into Inferred Megafunctions
  18. Multiplexer Restructuring Statistics (Restructuring Performed)
- 19. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated
- 20. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_fbg1:auto_generated
- 21. Source assignments for system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0|altsyncram_r1i1:auto_generated
- 22. Parameter Settings for User Entity Instance: system:interface|control:ucontrol
- 23. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST
- 24. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0
- 25. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_0
- 26. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_1
- 27. Parameter Settings for Inferred Entity Instance: system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0
- 28. Parameter Settings for Inferred Entity Instance: system:interface|ALU:uALU|lpm_divide:Div0
- 29. Parameter Settings for Inferred Entity Instance: system:interface|ALU:uALU|lpm_mult:Mult0
- 30. altsyncram Parameter Settings by Entity Instance
- 31. lpm_mult Parameter Settings by Entity Instance
- 32. Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"
- 33. Port Connectivity Checks: "system:interface|LCD_TEST:uLCD_TEST"
- 34. Port Connectivity Checks: "system:interface|REG:uREG"
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
- 38. Analysis & Synthesis Suppressed Messages
+ 19. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_gbg1:auto_generated
+ 20. Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_gbg1:auto_generated
+ 21. Parameter Settings for User Entity Instance: system:interface|control:ucontrol
+ 22. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST
+ 23. Parameter Settings for User Entity Instance: system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0
+ 24. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_0
+ 25. Parameter Settings for Inferred Entity Instance: system:interface|REG:uREG|altsyncram:REG_mem_rtl_1
+ 26. Parameter Settings for Inferred Entity Instance: system:interface|ALU:uALU|lpm_divide:Div0
+ 27. Parameter Settings for Inferred Entity Instance: system:interface|ALU:uALU|lpm_mult:Mult0
+ 28. altsyncram Parameter Settings by Entity Instance
+ 29. lpm_mult Parameter Settings by Entity Instance
+ 30. Port Connectivity Checks: "system:interface|LCD_Selector:uLCD_selector"
+ 31. Port Connectivity Checks: "system:interface|LCD_TEST:uLCD_TEST"
+ 32. Port Connectivity Checks: "system:interface|DMEM:uDMEM"
+ 33. Port Connectivity Checks: "system:interface|REG:uREG"
+ 34. Post-Synthesis Netlist Statistics for Top Partition
+ 35. Elapsed Time Per Partition
+ 36. Analysis & Synthesis Messages
+ 37. Analysis & Synthesis Suppressed Messages
 
 
 
@@ -70,18 +69,18 @@ agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Sun May 20 22:57:57 2018       ;
+; Analysis & Synthesis Status        ; Successful - Mon May 21 13:14:33 2018       ;
 ; Quartus Prime Version              ; 16.1.0 Build 196 10/24/2016 SJ Lite Edition ;
 ; Revision Name                      ; system                                      ;
 ; Top-level Entity Name              ; system_INTERFACE                            ;
 ; Family                             ; Cyclone IV GX                               ;
-; Total logic elements               ; 2,195                                       ;
-;     Total combinational functions  ; 2,085                                       ;
-;     Dedicated logic registers      ; 211                                         ;
-; Total registers                    ; 211                                         ;
+; Total logic elements               ; 2,792                                       ;
+;     Total combinational functions  ; 2,371                                       ;
+;     Dedicated logic registers      ; 563                                         ;
+; Total registers                    ; 563                                         ;
 ; Total pins                         ; 75                                          ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 10,240                                      ;
+; Total memory bits                  ; 2,048                                       ;
 ; Embedded Multiplier 9-bit elements ; 6                                           ;
 ; Total GXB Receiver Channel PCS     ; 0                                           ;
 ; Total GXB Receiver Channel PMA     ; 0                                           ;
@@ -99,7 +98,7 @@ agreement for further details.
 ; Device                                                                     ; EP4CGX150DF31C7    ;                    ;
 ; Top-level entity name                                                      ; system_INTERFACE   ; system             ;
 ; Family name                                                                ; Cyclone IV GX      ; Cyclone V          ;
-; Maximum processors allowed for parallel compilation                        ; 4                  ;                    ;
+; Maximum processors allowed for parallel compilation                        ; 2                  ;                    ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
 ; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
 ; Enable compact report table                                                ; Off                ; Off                ;
@@ -184,68 +183,64 @@ agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 4           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.1%      ;
-;     Processor 3            ;   0.1%      ;
-;     Processor 4            ;   0.1%      ;
+;     Processor 2            ;   0.2%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                                               ;
-+------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                                ; Library ;
-+------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
-; system.v                           ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v                           ;         ;
-; IMEM.v                             ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v                             ;         ;
-; REG.v                              ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/REG.v                              ;         ;
-; ALU.v                              ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v                              ;         ;
-; DMEM.v                             ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v                             ;         ;
-; control.v                          ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v                          ;         ;
-; ALU_control.v                      ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v                      ;         ;
-; Exception_Handle.v                 ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Exception_Handle.v                 ;         ;
-; Sign_Extend.v                      ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Sign_Extend.v                      ;         ;
-; EPC.v                              ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/EPC.v                              ;         ;
-; LCD_Controller.v                   ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Controller.v                   ;         ;
-; LCD_TEST.v                         ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v                         ;         ;
-; LCD_Selector.v                     ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v                     ;         ;
-; system_INTERFACE.v                 ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v                 ;         ;
-; dmem_mem.hex                       ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/dmem_mem.hex                       ;         ;
-; imem_mem.hex                       ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/imem_mem.hex                       ;         ;
-; altsyncram.tdf                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf                                            ;         ;
-; stratix_ram_block.inc              ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                     ;         ;
-; lpm_mux.inc                        ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                                               ;         ;
-; lpm_decode.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc                                            ;         ;
-; aglobal161.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc                                            ;         ;
-; a_rdenreg.inc                      ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc                                             ;         ;
-; altrom.inc                         ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc                                                ;         ;
-; altram.inc                         ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc                                                ;         ;
-; altdpram.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc                                              ;         ;
-; db/altsyncram_fbg1.tdf             ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_fbg1.tdf             ;         ;
-; db/system.ram0_reg_15692.hdl.mif   ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_reg_15692.hdl.mif   ;         ;
-; db/altsyncram_r1i1.tdf             ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_r1i1.tdf             ;         ;
-; db/system.ram0_dmem_22f088.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_dmem_22f088.hdl.mif ;         ;
-; lpm_divide.tdf                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_divide.tdf                                            ;         ;
-; abs_divider.inc                    ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/abs_divider.inc                                           ;         ;
-; sign_div_unsign.inc                ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                       ;         ;
-; db/lpm_divide_bom.tdf              ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/lpm_divide_bom.tdf              ;         ;
-; db/sign_div_unsign_9nh.tdf         ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/sign_div_unsign_9nh.tdf         ;         ;
-; db/alt_u_div_0ef.tdf               ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/alt_u_div_0ef.tdf               ;         ;
-; db/add_sub_1tc.tdf                 ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_1tc.tdf                 ;         ;
-; db/add_sub_2tc.tdf                 ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_2tc.tdf                 ;         ;
-; lpm_mult.tdf                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mult.tdf                                              ;         ;
-; lpm_add_sub.inc                    ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                           ;         ;
-; multcore.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/multcore.inc                                              ;         ;
-; bypassff.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/bypassff.inc                                              ;         ;
-; altshift.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altshift.inc                                              ;         ;
-; db/mult_1ht.tdf                    ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/mult_1ht.tdf                    ;         ;
-+------------------------------------+-----------------+-------------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                                           ;
++----------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                             ; File Name with Absolute Path                                                                                              ; Library ;
++----------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
+; system.v                         ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v                         ;         ;
+; IMEM.v                           ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v                           ;         ;
+; REG.v                            ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/REG.v                            ;         ;
+; ALU.v                            ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v                            ;         ;
+; DMEM.v                           ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v                           ;         ;
+; control.v                        ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/control.v                        ;         ;
+; ALU_control.v                    ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v                    ;         ;
+; Exception_Handle.v               ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Exception_Handle.v               ;         ;
+; Sign_Extend.v                    ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/Sign_Extend.v                    ;         ;
+; EPC.v                            ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/EPC.v                            ;         ;
+; LCD_Controller.v                 ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Controller.v                 ;         ;
+; LCD_TEST.v                       ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v                       ;         ;
+; LCD_Selector.v                   ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v                   ;         ;
+; system_INTERFACE.v               ; yes             ; User Verilog HDL File                                 ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v               ;         ;
+; dmem_mem.hex                     ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/dmem_mem.hex                     ;         ;
+; imem_mem.hex                     ; yes             ; Auto-Found Hexadecimal (Intel-Format) File            ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/imem_mem.hex                     ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altsyncram.tdf                                          ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/stratix_ram_block.inc                                   ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mux.inc                                             ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_decode.inc                                          ;         ;
+; aglobal161.inc                   ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/aglobal161.inc                                          ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/a_rdenreg.inc                                           ;         ;
+; altrom.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altrom.inc                                              ;         ;
+; altram.inc                       ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altram.inc                                              ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altdpram.inc                                            ;         ;
+; db/altsyncram_gbg1.tdf           ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_gbg1.tdf           ;         ;
+; db/system.ram1_reg_15692.hdl.mif ; yes             ; Auto-Generated Auto-Found Memory Initialization File  ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram1_reg_15692.hdl.mif ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_divide.tdf                                          ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/abs_divider.inc                                         ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/sign_div_unsign.inc                                     ;         ;
+; db/lpm_divide_bom.tdf            ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/lpm_divide_bom.tdf            ;         ;
+; db/sign_div_unsign_9nh.tdf       ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/sign_div_unsign_9nh.tdf       ;         ;
+; db/alt_u_div_0ef.tdf             ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/alt_u_div_0ef.tdf             ;         ;
+; db/add_sub_1tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_1tc.tdf               ;         ;
+; db/add_sub_2tc.tdf               ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_2tc.tdf               ;         ;
+; lpm_mult.tdf                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_mult.tdf                                            ;         ;
+; lpm_add_sub.inc                  ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/lpm_add_sub.inc                                         ;         ;
+; multcore.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/multcore.inc                                            ;         ;
+; bypassff.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/bypassff.inc                                            ;         ;
+; altshift.inc                     ; yes             ; Megafunction                                          ; e:/games/soft/intelfpga_lite/16.1/quartus/libraries/megafunctions/altshift.inc                                            ;         ;
+; db/mult_1ht.tdf                  ; yes             ; Auto-Generated Megafunction                           ; D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/mult_1ht.tdf                  ;         ;
++----------------------------------+-----------------+-------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +---------------------------------------------+
@@ -254,14 +249,14 @@ agreement for further details.
 ; Resource                 ; Usage            ;
 +--------------------------+------------------+
 ; I/O pins                 ; 75               ;
-; Total memory bits        ; 10240            ;
+; Total memory bits        ; 2048             ;
 ;                          ;                  ;
 ; DSP block 9-bit elements ; 6                ;
 ;                          ;                  ;
 ; Maximum fan-out node     ; KEY[0]~input     ;
-; Maximum fan-out          ; 256              ;
-; Total fan-out            ; 8805             ;
-; Average fan-out          ; 3.46             ;
+; Maximum fan-out          ; 576              ;
+; Total fan-out            ; 10544            ;
+; Average fan-out          ; 3.34             ;
 +--------------------------+------------------+
 
 
@@ -270,9 +265,9 @@ agreement for further details.
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 ; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; DSP 36x36 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                               ; Entity Name         ; Library Name ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |system_INTERFACE                            ; 2085 (1)            ; 211 (0)                   ; 10240       ; 6            ; 0       ; 3         ; 0         ; 75   ; 0            ; |system_INTERFACE                                                                                                                                                 ; system_INTERFACE    ; work         ;
-;    |system:interface|                        ; 2084 (76)           ; 211 (8)                   ; 10240       ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface                                                                                                                                ; system              ; work         ;
-;       |ALU:uALU|                             ; 1505 (384)          ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU                                                                                                                       ; ALU                 ; work         ;
+; |system_INTERFACE                            ; 2371 (1)            ; 563 (0)                   ; 2048        ; 6            ; 0       ; 3         ; 0         ; 75   ; 0            ; |system_INTERFACE                                                                                                                                                 ; system_INTERFACE    ; work         ;
+;    |system:interface|                        ; 2370 (91)           ; 563 (8)                   ; 2048        ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface                                                                                                                                ; system              ; work         ;
+;       |ALU:uALU|                             ; 1506 (385)          ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU                                                                                                                       ; ALU                 ; work         ;
 ;          |lpm_divide:Div0|                   ; 1093 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_divide:Div0                                                                                                       ; lpm_divide          ; work         ;
 ;             |lpm_divide_bom:auto_generated|  ; 1093 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_divide:Div0|lpm_divide_bom:auto_generated                                                                         ; lpm_divide_bom      ; work         ;
 ;                |sign_div_unsign_9nh:divider| ; 1093 (0)            ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_divide:Div0|lpm_divide_bom:auto_generated|sign_div_unsign_9nh:divider                                             ; sign_div_unsign_9nh ; work         ;
@@ -280,34 +275,31 @@ agreement for further details.
 ;                      |add_sub_2tc:add_sub_1| ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_divide:Div0|lpm_divide_bom:auto_generated|sign_div_unsign_9nh:divider|alt_u_div_0ef:divider|add_sub_2tc:add_sub_1 ; add_sub_2tc         ; work         ;
 ;          |lpm_mult:Mult0|                    ; 28 (0)              ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_mult:Mult0                                                                                                        ; lpm_mult            ; work         ;
 ;             |mult_1ht:auto_generated|        ; 28 (28)             ; 0 (0)                     ; 0           ; 6            ; 0       ; 3         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU:uALU|lpm_mult:Mult0|mult_1ht:auto_generated                                                                                ; mult_1ht            ; work         ;
-;       |ALU_control:uALU_control|             ; 14 (14)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU_control:uALU_control                                                                                                       ; ALU_control         ; work         ;
-;       |DMEM:uDMEM|                           ; 1 (1)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|DMEM:uDMEM                                                                                                                     ; DMEM                ; work         ;
-;          |altsyncram:DMEM_mem_rtl_0|         ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0                                                                                           ; altsyncram          ; work         ;
-;             |altsyncram_r1i1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0|altsyncram_r1i1:auto_generated                                                            ; altsyncram_r1i1     ; work         ;
+;       |ALU_control:uALU_control|             ; 11 (11)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|ALU_control:uALU_control                                                                                                       ; ALU_control         ; work         ;
+;       |DMEM:uDMEM|                           ; 275 (275)           ; 352 (352)                 ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|DMEM:uDMEM                                                                                                                     ; DMEM                ; work         ;
 ;       |Exception_Handle:uException_Handle|   ; 2 (2)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|Exception_Handle:uException_Handle                                                                                             ; Exception_Handle    ; work         ;
 ;       |IMEM:uIMEM|                           ; 8 (8)               ; 5 (5)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|IMEM:uIMEM                                                                                                                     ; IMEM                ; work         ;
-;       |LCD_Selector:uLCD_selector|           ; 185 (185)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector                                                                                                     ; LCD_Selector        ; work         ;
-;       |LCD_TEST:uLCD_TEST|                   ; 213 (192)           ; 51 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST                                                                                                             ; LCD_TEST            ; work         ;
+;       |LCD_Selector:uLCD_selector|           ; 200 (200)           ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector                                                                                                     ; LCD_Selector        ; work         ;
+;       |LCD_TEST:uLCD_TEST|                   ; 193 (172)           ; 51 (38)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST                                                                                                             ; LCD_TEST            ; work         ;
 ;          |LCD_Controller:u0|                 ; 21 (21)             ; 13 (13)                   ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0                                                                                           ; LCD_Controller      ; work         ;
-;       |REG:uREG|                             ; 79 (79)             ; 147 (147)                 ; 2048        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG                                                                                                                       ; REG                 ; work         ;
+;       |REG:uREG|                             ; 80 (80)             ; 147 (147)                 ; 2048        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG                                                                                                                       ; REG                 ; work         ;
 ;          |altsyncram:REG_mem_rtl_0|          ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_0                                                                                              ; altsyncram          ; work         ;
-;             |altsyncram_fbg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated                                                               ; altsyncram_fbg1     ; work         ;
+;             |altsyncram_gbg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_gbg1:auto_generated                                                               ; altsyncram_gbg1     ; work         ;
 ;          |altsyncram:REG_mem_rtl_1|          ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_1                                                                                              ; altsyncram          ; work         ;
-;             |altsyncram_fbg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_fbg1:auto_generated                                                               ; altsyncram_fbg1     ; work         ;
-;       |control:ucontrol|                     ; 1 (1)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|control:ucontrol                                                                                                               ; control             ; work         ;
+;             |altsyncram_gbg1:auto_generated| ; 0 (0)               ; 0 (0)                     ; 1024        ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_gbg1:auto_generated                                                               ; altsyncram_gbg1     ; work         ;
+;       |control:ucontrol|                     ; 4 (4)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0         ; 0    ; 0            ; |system_INTERFACE|system:interface|control:ucontrol                                                                                                               ; control             ; work         ;
 +----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+-----------+------+--------------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                  ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------+
-; Name                                                                                            ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                                ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------+
-; system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0|altsyncram_r1i1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 256          ; 32           ; 256          ; 32           ; 8192 ; db/system.ram0_DMEM_22f088.hdl.mif ;
-; system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/system.ram0_REG_15692.hdl.mif   ;
-; system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_fbg1:auto_generated|ALTSYNCRAM    ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/system.ram0_REG_15692.hdl.mif   ;
-+-------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                             ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------+
+; Name                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF                              ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------+
+; system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_gbg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/system.ram1_REG_15692.hdl.mif ;
+; system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_gbg1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 32           ; 32           ; 32           ; 32           ; 1024 ; db/system.ram1_REG_15692.hdl.mif ;
++----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+----------------------------------+
 
 
 +-----------------------------------------------------+
@@ -404,12 +396,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 211   ;
+; Total registers                              ; 563   ;
 ; Number of registers using Synchronous Clear  ; 18    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 8     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 40    ;
+; Number of registers using Clock Enable       ; 392   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -443,11 +435,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[32] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[34] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[24] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_1_bypass[18] ; 1       ;
-; system:interface|REG:uREG|REG_mem_rtl_1_bypass[22] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[26] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[28] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_1_bypass[18] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[20] ; 1       ;
+; system:interface|REG:uREG|REG_mem_rtl_1_bypass[22] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[16] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[14] ; 1       ;
 ; system:interface|REG:uREG|REG_mem_rtl_1_bypass[12] ; 1       ;
@@ -645,32 +637,31 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------+-----------------------------------------+
 
 
++-------------------------------------------------------------------------------------------------------+
+; Registers Packed Into Inferred Megafunctions                                                          ;
++------------------------------------------------------+-----------------------------------------+------+
+; Register Name                                        ; Megafunction                            ; Type ;
++------------------------------------------------------+-----------------------------------------+------+
+; system:interface|IMEM:uIMEM|IMEM_instruction[21..23] ; system:interface|REG:uREG|REG_mem_rtl_1 ; RAM  ;
++------------------------------------------------------+-----------------------------------------+------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                              ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                    ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LUT_INDEX[5]            ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|oDone ;
+; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|mLCD_ST                 ;
+; 12:1               ; 31 bits   ; 248 LEs       ; 186 LEs              ; 62 LEs                 ; No         ; |system_INTERFACE|system:interface|ALU:uALU|Mux2                              ;
+; 257:1              ; 9 bits    ; 1539 LEs      ; 36 LEs               ; 1503 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector10      ;
+; 257:1              ; 9 bits    ; 1539 LEs      ; 45 LEs               ; 1494 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector16      ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------------------+
+
+
 +----------------------------------------------------------------------------------------------------------+
-; Registers Packed Into Inferred Megafunctions                                                             ;
-+------------------------------------------------------+--------------------------------------------+------+
-; Register Name                                        ; Megafunction                               ; Type ;
-+------------------------------------------------------+--------------------------------------------+------+
-; system:interface|IMEM:uIMEM|IMEM_instruction[21..23] ; system:interface|REG:uREG|REG_mem_rtl_1    ; RAM  ;
-; system:interface|DMEM:uDMEM|DMEM_data_out[0..31]     ; system:interface|DMEM:uDMEM|DMEM_mem_rtl_0 ; RAM  ;
-+------------------------------------------------------+--------------------------------------------+------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                               ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LUT_INDEX[1]             ;
-; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0|mStart ;
-; 7:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |system_INTERFACE|system:interface|LCD_TEST:uLCD_TEST|mLCD_ST                  ;
-; 12:1               ; 31 bits   ; 248 LEs       ; 186 LEs              ; 62 LEs                 ; No         ; |system_INTERFACE|system:interface|ALU:uALU|Mux13                              ;
-; 256:1              ; 8 bits    ; 1360 LEs      ; 32 LEs               ; 1328 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector8        ;
-; 256:1              ; 9 bits    ; 1530 LEs      ; 45 LEs               ; 1485 LEs               ; No         ; |system_INTERFACE|system:interface|LCD_Selector:uLCD_selector|Selector30       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_fbg1:auto_generated ;
+; Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_0|altsyncram_gbg1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                         ;
 +---------------------------------+--------------------+------+--------------------------------------------+
@@ -679,21 +670,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 
 
 +----------------------------------------------------------------------------------------------------------+
-; Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_fbg1:auto_generated ;
+; Source assignments for system:interface|REG:uREG|altsyncram:REG_mem_rtl_1|altsyncram_gbg1:auto_generated ;
 +---------------------------------+--------------------+------+--------------------------------------------+
 ; Assignment                      ; Value              ; From ; To                                         ;
 +---------------------------------+--------------------+------+--------------------------------------------+
 ; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
 +---------------------------------+--------------------+------+--------------------------------------------+
-
-
-+-------------------------------------------------------------------------------------------------------------+
-; Source assignments for system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0|altsyncram_r1i1:auto_generated ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                            ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                             ;
-+---------------------------------+--------------------+------+-----------------------------------------------+
 
 
 +--------------------------------------------------------------------------------+
@@ -714,34 +696,16 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; ALUsrc         ; 1      ; Unsigned Binary                                      ;
 ; RegWrite       ; 1      ; Unsigned Binary                                      ;
 ; RegDst         ; 1      ; Unsigned Binary                                      ;
-; div            ; 000000 ; Unsigned Binary                                      ;
-; mul            ; 000000 ; Unsigned Binary                                      ;
-; add            ; 000000 ; Unsigned Binary                                      ;
-; _nor           ; 000000 ; Unsigned Binary                                      ;
-; _or            ; 000000 ; Unsigned Binary                                      ;
-; slt            ; 000000 ; Unsigned Binary                                      ;
-; sll            ; 000000 ; Unsigned Binary                                      ;
-; sltu           ; 000000 ; Unsigned Binary                                      ;
-; srl            ; 000000 ; Unsigned Binary                                      ;
-; sub            ; 000000 ; Unsigned Binary                                      ;
-; jr             ; 000000 ; Unsigned Binary                                      ;
-; _xor           ; 000000 ; Unsigned Binary                                      ;
 ; addi           ; 001000 ; Unsigned Binary                                      ;
 ; lw             ; 100011 ; Unsigned Binary                                      ;
 ; sw             ; 101011 ; Unsigned Binary                                      ;
 ; j              ; 000010 ; Unsigned Binary                                      ;
-; jal            ; 000011 ; Unsigned Binary                                      ;
 ; beq            ; 000100 ; Unsigned Binary                                      ;
 ; bne            ; 000101 ; Unsigned Binary                                      ;
 ; slti           ; 001010 ; Unsigned Binary                                      ;
-; sltiu          ; 001011 ; Unsigned Binary                                      ;
 ; andi           ; 001100 ; Unsigned Binary                                      ;
 ; ori            ; 001101 ; Unsigned Binary                                      ;
-; lui            ; 001111 ; Unsigned Binary                                      ;
-; lbu            ; 100100 ; Unsigned Binary                                      ;
-; lhu            ; 100101 ; Unsigned Binary                                      ;
 ; sb             ; 101000 ; Unsigned Binary                                      ;
-; sh             ; 101001 ; Unsigned Binary                                      ;
 +----------------+--------+------------------------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -813,7 +777,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                        ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ             ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ             ; Untyped                     ;
-; INIT_FILE                          ; db/system.ram0_REG_15692.hdl.mif ; Untyped                     ;
+; INIT_FILE                          ; db/system.ram1_REG_15692.hdl.mif ; Untyped                     ;
 ; INIT_FILE_LAYOUT                   ; PORT_A                           ; Untyped                     ;
 ; MAXIMUM_DEPTH                      ; 0                                ; Untyped                     ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL                           ; Untyped                     ;
@@ -826,7 +790,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                            ; Untyped                     ;
 ; WIDTH_ECCSTATUS                    ; 3                                ; Untyped                     ;
 ; DEVICE_FAMILY                      ; Cyclone IV GX                    ; Untyped                     ;
-; CBXI_PARAMETER                     ; altsyncram_fbg1                  ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_gbg1                  ; Untyped                     ;
 +------------------------------------+----------------------------------+-----------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
@@ -874,7 +838,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                        ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ             ; Untyped                     ;
 ; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ             ; Untyped                     ;
-; INIT_FILE                          ; db/system.ram0_REG_15692.hdl.mif ; Untyped                     ;
+; INIT_FILE                          ; db/system.ram1_REG_15692.hdl.mif ; Untyped                     ;
 ; INIT_FILE_LAYOUT                   ; PORT_A                           ; Untyped                     ;
 ; MAXIMUM_DEPTH                      ; 0                                ; Untyped                     ;
 ; CLOCK_ENABLE_INPUT_A               ; NORMAL                           ; Untyped                     ;
@@ -887,69 +851,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                            ; Untyped                     ;
 ; WIDTH_ECCSTATUS                    ; 3                                ; Untyped                     ;
 ; DEVICE_FAMILY                      ; Cyclone IV GX                    ; Untyped                     ;
-; CBXI_PARAMETER                     ; altsyncram_fbg1                  ; Untyped                     ;
+; CBXI_PARAMETER                     ; altsyncram_gbg1                  ; Untyped                     ;
 +------------------------------------+----------------------------------+-----------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+--------------------------------------------------------------------------------------------------------+
-; Parameter Settings for Inferred Entity Instance: system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0 ;
-+------------------------------------+------------------------------------+------------------------------+
-; Parameter Name                     ; Value                              ; Type                         ;
-+------------------------------------+------------------------------------+------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                                  ; Untyped                      ;
-; AUTO_CARRY_CHAINS                  ; ON                                 ; AUTO_CARRY                   ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                ; IGNORE_CARRY                 ;
-; AUTO_CASCADE_CHAINS                ; ON                                 ; AUTO_CASCADE                 ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                ; IGNORE_CASCADE               ;
-; WIDTH_BYTEENA                      ; 1                                  ; Untyped                      ;
-; OPERATION_MODE                     ; DUAL_PORT                          ; Untyped                      ;
-; WIDTH_A                            ; 32                                 ; Untyped                      ;
-; WIDTHAD_A                          ; 8                                  ; Untyped                      ;
-; NUMWORDS_A                         ; 256                                ; Untyped                      ;
-; OUTDATA_REG_A                      ; UNREGISTERED                       ; Untyped                      ;
-; ADDRESS_ACLR_A                     ; NONE                               ; Untyped                      ;
-; OUTDATA_ACLR_A                     ; NONE                               ; Untyped                      ;
-; WRCONTROL_ACLR_A                   ; NONE                               ; Untyped                      ;
-; INDATA_ACLR_A                      ; NONE                               ; Untyped                      ;
-; BYTEENA_ACLR_A                     ; NONE                               ; Untyped                      ;
-; WIDTH_B                            ; 32                                 ; Untyped                      ;
-; WIDTHAD_B                          ; 8                                  ; Untyped                      ;
-; NUMWORDS_B                         ; 256                                ; Untyped                      ;
-; INDATA_REG_B                       ; CLOCK1                             ; Untyped                      ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                             ; Untyped                      ;
-; RDCONTROL_REG_B                    ; CLOCK1                             ; Untyped                      ;
-; ADDRESS_REG_B                      ; CLOCK1                             ; Untyped                      ;
-; OUTDATA_REG_B                      ; UNREGISTERED                       ; Untyped                      ;
-; BYTEENA_REG_B                      ; CLOCK1                             ; Untyped                      ;
-; INDATA_ACLR_B                      ; NONE                               ; Untyped                      ;
-; WRCONTROL_ACLR_B                   ; NONE                               ; Untyped                      ;
-; ADDRESS_ACLR_B                     ; NONE                               ; Untyped                      ;
-; OUTDATA_ACLR_B                     ; NONE                               ; Untyped                      ;
-; RDCONTROL_ACLR_B                   ; NONE                               ; Untyped                      ;
-; BYTEENA_ACLR_B                     ; NONE                               ; Untyped                      ;
-; WIDTH_BYTEENA_A                    ; 1                                  ; Untyped                      ;
-; WIDTH_BYTEENA_B                    ; 1                                  ; Untyped                      ;
-; RAM_BLOCK_TYPE                     ; AUTO                               ; Untyped                      ;
-; BYTE_SIZE                          ; 8                                  ; Untyped                      ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                          ; Untyped                      ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ               ; Untyped                      ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ               ; Untyped                      ;
-; INIT_FILE                          ; db/system.ram0_DMEM_22f088.hdl.mif ; Untyped                      ;
-; INIT_FILE_LAYOUT                   ; PORT_A                             ; Untyped                      ;
-; MAXIMUM_DEPTH                      ; 0                                  ; Untyped                      ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL                             ; Untyped                      ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                             ; Untyped                      ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL                             ; Untyped                      ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                             ; Untyped                      ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                    ; Untyped                      ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                    ; Untyped                      ;
-; ENABLE_ECC                         ; FALSE                              ; Untyped                      ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                              ; Untyped                      ;
-; WIDTH_ECCSTATUS                    ; 3                                  ; Untyped                      ;
-; DEVICE_FAMILY                      ; Cyclone IV GX                      ; Untyped                      ;
-; CBXI_PARAMETER                     ; altsyncram_r1i1                    ; Untyped                      ;
-+------------------------------------+------------------------------------+------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1011,46 +914,35 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+---------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                                  ;
-+-------------------------------------------+-------------------------------------------------------+
-; Name                                      ; Value                                                 ;
-+-------------------------------------------+-------------------------------------------------------+
-; Number of entity instances                ; 3                                                     ;
-; Entity Instance                           ; system:interface|REG:uREG|altsyncram:REG_mem_rtl_0    ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                             ;
-;     -- WIDTH_A                            ; 32                                                    ;
-;     -- NUMWORDS_A                         ; 32                                                    ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
-;     -- WIDTH_B                            ; 32                                                    ;
-;     -- NUMWORDS_B                         ; 32                                                    ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                                ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                             ;
-; Entity Instance                           ; system:interface|REG:uREG|altsyncram:REG_mem_rtl_1    ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                             ;
-;     -- WIDTH_A                            ; 32                                                    ;
-;     -- NUMWORDS_A                         ; 32                                                    ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
-;     -- WIDTH_B                            ; 32                                                    ;
-;     -- NUMWORDS_B                         ; 32                                                    ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                                ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                             ;
-; Entity Instance                           ; system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                             ;
-;     -- WIDTH_A                            ; 32                                                    ;
-;     -- NUMWORDS_A                         ; 256                                                   ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                          ;
-;     -- WIDTH_B                            ; 32                                                    ;
-;     -- NUMWORDS_B                         ; 256                                                   ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                                ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                          ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                                  ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                             ;
-+-------------------------------------------+-------------------------------------------------------+
++------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                               ;
++-------------------------------------------+----------------------------------------------------+
+; Name                                      ; Value                                              ;
++-------------------------------------------+----------------------------------------------------+
+; Number of entity instances                ; 2                                                  ;
+; Entity Instance                           ; system:interface|REG:uREG|altsyncram:REG_mem_rtl_0 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
+;     -- WIDTH_A                            ; 32                                                 ;
+;     -- NUMWORDS_A                         ; 32                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- WIDTH_B                            ; 32                                                 ;
+;     -- NUMWORDS_B                         ; 32                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
+; Entity Instance                           ; system:interface|REG:uREG|altsyncram:REG_mem_rtl_1 ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
+;     -- WIDTH_A                            ; 32                                                 ;
+;     -- NUMWORDS_A                         ; 32                                                 ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
+;     -- WIDTH_B                            ; 32                                                 ;
+;     -- NUMWORDS_B                         ; 32                                                 ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
+;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
++-------------------------------------------+----------------------------------------------------+
 
 
 +----------------------------------------------------------------------------------+
@@ -1096,6 +988,15 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "system:interface|DMEM:uDMEM"                                                                                                                                                              ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port         ; Type  ; Severity ; Details                                                                                                                                                                            ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; DMEM_address ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (8 bits) it drives.  The 24 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++--------------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "system:interface|REG:uREG"                                                                                                                                                                ;
 +----------------+-------+----------+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Port           ; Type  ; Severity ; Details                                                                                                                                                                          ;
@@ -1110,27 +1011,27 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 75                          ;
-; cycloneiii_ff         ; 211                         ;
+; cycloneiii_ff         ; 563                         ;
 ;     CLR               ; 8                           ;
-;     ENA               ; 22                          ;
+;     ENA               ; 374                         ;
 ;     ENA SCLR          ; 18                          ;
 ;     plain             ; 163                         ;
-; cycloneiii_lcell_comb ; 2087                        ;
+; cycloneiii_lcell_comb ; 2373                        ;
 ;     arith             ; 679                         ;
 ;         2 data inputs ; 34                          ;
 ;         3 data inputs ; 645                         ;
-;     normal            ; 1408                        ;
+;     normal            ; 1694                        ;
 ;         0 data inputs ; 33                          ;
-;         1 data inputs ; 9                           ;
-;         2 data inputs ; 83                          ;
-;         3 data inputs ; 159                         ;
-;         4 data inputs ; 1124                        ;
+;         1 data inputs ; 18                          ;
+;         2 data inputs ; 87                          ;
+;         3 data inputs ; 201                         ;
+;         4 data inputs ; 1355                        ;
 ; cycloneiii_mac_mult   ; 3                           ;
 ; cycloneiii_mac_out    ; 3                           ;
-; cycloneiii_ram_block  ; 96                          ;
+; cycloneiii_ram_block  ; 64                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 134.50                      ;
-; Average LUT depth     ; 89.88                       ;
+; Max LUT depth         ; 139.50                      ;
+; Average LUT depth     ; 92.00                       ;
 +-----------------------+-----------------------------+
 
 
@@ -1139,7 +1040,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:17     ;
 +----------------+--------------+
 
 
@@ -1149,10 +1050,9 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 16.1.0 Build 196 10/24/2016 SJ Lite Edition
-    Info: Processing started: Sun May 20 22:57:04 2018
+    Info: Processing started: Mon May 21 13:13:36 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off MIPS_Computer_simplified -c system
-Info (20032): Parallel compilation is enabled and will use up to 4 processors
-Warning (20031): Parallel compilation is enabled for 4 processors, but there are only 2 processors in the system. Runtime may increase due to over usage of the processor space.
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
 Info (12021): Found 1 design units, including 1 entities, in source file system.v
     Info (12023): Found entity 1: system File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 5
 Info (12021): Found 1 design units, including 1 entities, in source file imem.v
@@ -1187,23 +1087,18 @@ Info (12021): Found 1 design units, including 1 entities, in source file system_
 Info (12127): Elaborating entity "system_INTERFACE" for the top level hierarchy
 Warning (10034): Output port "LEDR[17..1]" at system_INTERFACE.v(10) has no driver File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 10
 Info (12128): Elaborating entity "system" for hierarchy "system:interface" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 36
-Warning (10230): Verilog HDL assignment warning at system.v(150): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 150
-Warning (10230): Verilog HDL assignment warning at system.v(151): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 151
-Warning (10230): Verilog HDL assignment warning at system.v(152): truncated value with size 32 to match size of target (1) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 152
-Warning (10230): Verilog HDL assignment warning at system.v(180): truncated value with size 32 to match size of target (8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 180
-Info (12128): Elaborating entity "IMEM" for hierarchy "system:interface|IMEM:uIMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 75
+Warning (10230): Verilog HDL assignment warning at system.v(190): truncated value with size 32 to match size of target (8) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 190
+Info (12128): Elaborating entity "IMEM" for hierarchy "system:interface|IMEM:uIMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 81
 Warning (10850): Verilog HDL warning at IMEM.v(12): number of words (3) in memory file does not match the number of elements in the address range [0:255] File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 12
 Warning (10030): Net "IMEM_mem.data_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (10030): Net "IMEM_mem.waddr_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (10030): Net "IMEM_mem.we_a" at IMEM.v(8) has no driver or initial value, using a default initial value '0' File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
-Info (12128): Elaborating entity "REG" for hierarchy "system:interface|REG:uREG" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 87
-Info (12128): Elaborating entity "ALU" for hierarchy "system:interface|ALU:uALU" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 98
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(17): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 17
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(17): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 17
+Info (12128): Elaborating entity "REG" for hierarchy "system:interface|REG:uREG" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 93
+Info (12128): Elaborating entity "ALU" for hierarchy "system:interface|ALU:uALU" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 104
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(18): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 18
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(18): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 18
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(20): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 20
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(20): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 20
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(19): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 19
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(19): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 19
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(21): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 21
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(21): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 21
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(22): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 22
@@ -1219,33 +1114,34 @@ Warning (10235): Verilog HDL Always Construct warning at ALU.v(26): variable "AL
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(27): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 27
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(27): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 27
 Warning (10235): Verilog HDL Always Construct warning at ALU.v(28): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 28
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(28): variable "shamnt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 28
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(29): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 29
-Warning (10235): Verilog HDL Always Construct warning at ALU.v(29): variable "shamnt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 29
-Warning (10272): Verilog HDL Case Statement warning at ALU.v(28): case item expression covers a value already covered by a previous case item File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 28
-Warning (10240): Verilog HDL Always Construct warning at ALU.v(14): inferring latch(es) for variable "result_temp", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 14
-Info (10041): Inferred latch for "result_temp[32]" at ALU.v(14) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 14
-Info (12128): Elaborating entity "DMEM" for hierarchy "system:interface|DMEM:uDMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 109
-Warning (10850): Verilog HDL warning at DMEM.v(14): number of words (9) in memory file does not match the number of elements in the address range [0:255] File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 14
-Info (12128): Elaborating entity "control" for hierarchy "system:interface|control:ucontrol" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 115
-Info (12128): Elaborating entity "ALU_control" for hierarchy "system:interface|ALU_control:uALU_control" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 136
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(28): variable "ALU_operand_2" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 28
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(30): variable "shamnt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 30
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(31): variable "ALU_operand_1" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 31
+Warning (10235): Verilog HDL Always Construct warning at ALU.v(31): variable "shamnt" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 31
+Warning (10272): Verilog HDL Case Statement warning at ALU.v(30): case item expression covers a value already covered by a previous case item File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 30
+Warning (10240): Verilog HDL Always Construct warning at ALU.v(15): inferring latch(es) for variable "result_temp", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 15
+Info (10041): Inferred latch for "result_temp[32]" at ALU.v(15) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 15
+Info (12128): Elaborating entity "DMEM" for hierarchy "system:interface|DMEM:uDMEM" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 115
+Warning (10850): Verilog HDL warning at DMEM.v(14): number of words (9) in memory file does not match the number of elements in the address range [0:10] File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 14
+Info (12128): Elaborating entity "control" for hierarchy "system:interface|control:ucontrol" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 121
+Info (12128): Elaborating entity "ALU_control" for hierarchy "system:interface|ALU_control:uALU_control" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 142
 Warning (10235): Verilog HDL Always Construct warning at ALU_control.v(47): variable "ALU_control_out" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 47
 Warning (10240): Verilog HDL Always Construct warning at ALU_control.v(9): inferring latch(es) for variable "ALU_control_out", which holds its previous value in one or more paths through the always construct File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 9
-Info (10041): Inferred latch for "ALU_control_out[0]" at ALU_control.v(13) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 13
-Info (10041): Inferred latch for "ALU_control_out[1]" at ALU_control.v(13) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 13
-Info (10041): Inferred latch for "ALU_control_out[2]" at ALU_control.v(13) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 13
-Info (10041): Inferred latch for "ALU_control_out[3]" at ALU_control.v(13) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 13
-Info (12128): Elaborating entity "Exception_Handle" for hierarchy "system:interface|Exception_Handle:uException_Handle" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 147
-Info (12128): Elaborating entity "Sign_Ext" for hierarchy "system:interface|Sign_Ext:uSign_Ext" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 165
-Info (12128): Elaborating entity "EPC" for hierarchy "system:interface|EPC:uEPC" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 203
+Info (10041): Inferred latch for "ALU_control_out[0]" at ALU_control.v(19) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 19
+Info (10041): Inferred latch for "ALU_control_out[1]" at ALU_control.v(19) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 19
+Info (10041): Inferred latch for "ALU_control_out[2]" at ALU_control.v(19) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 19
+Info (10041): Inferred latch for "ALU_control_out[3]" at ALU_control.v(19) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU_control.v Line: 19
+Info (12128): Elaborating entity "Exception_Handle" for hierarchy "system:interface|Exception_Handle:uException_Handle" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 153
+Info (12128): Elaborating entity "Sign_Ext" for hierarchy "system:interface|Sign_Ext:uSign_Ext" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 175
+Info (12128): Elaborating entity "EPC" for hierarchy "system:interface|EPC:uEPC" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 213
 Warning (10235): Verilog HDL Always Construct warning at EPC.v(10): variable "EPC_PC" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/EPC.v Line: 10
-Info (12128): Elaborating entity "LCD_TEST" for hierarchy "system:interface|LCD_TEST:uLCD_TEST" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 225
+Info (12128): Elaborating entity "LCD_TEST" for hierarchy "system:interface|LCD_TEST:uLCD_TEST" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 235
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(67): truncated value with size 32 to match size of target (18) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 67
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(75): truncated value with size 32 to match size of target (6) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 75
 Warning (10230): Verilog HDL assignment warning at LCD_TEST.v(80): truncated value with size 32 to match size of target (6) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 80
 Info (12128): Elaborating entity "LCD_Controller" for hierarchy "system:interface|LCD_TEST:uLCD_TEST|LCD_Controller:u0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_TEST.v Line: 145
 Warning (10230): Verilog HDL assignment warning at LCD_Controller.v(68): truncated value with size 32 to match size of target (5) File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Controller.v Line: 68
-Info (12128): Elaborating entity "LCD_Selector" for hierarchy "system:interface|LCD_Selector:uLCD_selector" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 249
+Info (12128): Elaborating entity "LCD_Selector" for hierarchy "system:interface|LCD_Selector:uLCD_selector" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system.v Line: 259
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(18): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 18
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(19): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 19
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(20): variable "IMEM_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 20
@@ -1311,15 +1207,17 @@ Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(107): va
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(108): variable "EPC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 108
 Warning (10235): Verilog HDL Always Construct warning at LCD_Selector.v(109): variable "EPC_data" is read inside the Always Construct but isn't in the Always Construct's Event Control File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 109
 Info (10264): Verilog HDL Case Statement information at LCD_Selector.v(14): all case item expressions in this case statement are onehot File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/LCD_Selector.v Line: 14
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_REG_15692.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram1_REG_15692.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "system:interface|REG:uREG|REG_mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_REG_15692.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram1_REG_15692.hdl.mif" contains "don't care" values -- overwriting them with 0s
 Warning (276020): Inferred RAM node "system:interface|REG:uREG|REG_mem_rtl_1" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
-Warning (276027): Inferred dual-clock RAM node "system:interface|DMEM:uDMEM|DMEM_mem_rtl_0" from synchronous design logic.  The read-during-write behavior of a dual-clock RAM is undefined and may not match the behavior of the original design.
-Info (276014): Found 1 instances of uninferred RAM logic
+Info (276014): Found 2 instances of uninferred RAM logic
+    Info (276007): RAM logic "system:interface|DMEM:uDMEM|DMEM_mem" is uninferred due to asynchronous read logic File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/DMEM.v Line: 11
     Info (276007): RAM logic "system:interface|IMEM:uIMEM|IMEM_mem" is uninferred due to asynchronous read logic File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/IMEM.v Line: 8
 Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_IMEM_257482.hdl.mif" contains "don't care" values -- overwriting them with 0s
-Info (19000): Inferred 3 megafunctions from design logic
+Critical Warning (127005): Memory depth (16) in the design file differs from memory depth (11) in the Memory Initialization File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_DMEM_22f088.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/system.ram0_DMEM_22f088.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (19000): Inferred 2 megafunctions from design logic
     Info (276029): Inferred altsyncram megafunction from the following design logic: "system:interface|REG:uREG|REG_mem_rtl_0" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 32
@@ -1335,7 +1233,7 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/system.ram0_REG_15692.hdl.mif
+        Info (286033): Parameter INIT_FILE set to db/system.ram1_REG_15692.hdl.mif
     Info (276029): Inferred altsyncram megafunction from the following design logic: "system:interface|REG:uREG|REG_mem_rtl_1" 
         Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
         Info (286033): Parameter WIDTH_A set to 32
@@ -1351,26 +1249,10 @@ Info (19000): Inferred 3 megafunctions from design logic
         Info (286033): Parameter ADDRESS_REG_B set to CLOCK0
         Info (286033): Parameter INDATA_ACLR_A set to NONE
         Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/system.ram0_REG_15692.hdl.mif
-    Info (276029): Inferred altsyncram megafunction from the following design logic: "system:interface|DMEM:uDMEM|DMEM_mem_rtl_0" 
-        Info (286033): Parameter OPERATION_MODE set to DUAL_PORT
-        Info (286033): Parameter WIDTH_A set to 32
-        Info (286033): Parameter WIDTHAD_A set to 8
-        Info (286033): Parameter NUMWORDS_A set to 256
-        Info (286033): Parameter WIDTH_B set to 32
-        Info (286033): Parameter WIDTHAD_B set to 8
-        Info (286033): Parameter NUMWORDS_B set to 256
-        Info (286033): Parameter ADDRESS_ACLR_A set to NONE
-        Info (286033): Parameter OUTDATA_REG_B set to UNREGISTERED
-        Info (286033): Parameter ADDRESS_ACLR_B set to NONE
-        Info (286033): Parameter OUTDATA_ACLR_B set to NONE
-        Info (286033): Parameter ADDRESS_REG_B set to CLOCK1
-        Info (286033): Parameter INDATA_ACLR_A set to NONE
-        Info (286033): Parameter WRCONTROL_ACLR_A set to NONE
-        Info (286033): Parameter INIT_FILE set to db/system.ram0_DMEM_22f088.hdl.mif
+        Info (286033): Parameter INIT_FILE set to db/system.ram1_REG_15692.hdl.mif
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "system:interface|ALU:uALU|Div0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
-    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "system:interface|ALU:uALU|Mult0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 25
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "system:interface|ALU:uALU|Div0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 27
+    Info (278003): Inferred multiplier megafunction ("lpm_mult") from the following logic: "system:interface|ALU:uALU|Mult0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
 Info (12130): Elaborated megafunction instantiation "system:interface|REG:uREG|altsyncram:REG_mem_rtl_0"
 Info (12133): Instantiated megafunction "system:interface|REG:uREG|altsyncram:REG_mem_rtl_0" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1387,9 +1269,9 @@ Info (12133): Instantiated megafunction "system:interface|REG:uREG|altsyncram:RE
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/system.ram0_REG_15692.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_fbg1.tdf
-    Info (12023): Found entity 1: altsyncram_fbg1 File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_fbg1.tdf Line: 28
+    Info (12134): Parameter "INIT_FILE" = "db/system.ram1_REG_15692.hdl.mif"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_gbg1.tdf
+    Info (12023): Found entity 1: altsyncram_gbg1 File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_gbg1.tdf Line: 28
 Info (12130): Elaborated megafunction instantiation "system:interface|REG:uREG|altsyncram:REG_mem_rtl_1"
 Info (12133): Instantiated megafunction "system:interface|REG:uREG|altsyncram:REG_mem_rtl_1" with the following parameter:
     Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
@@ -1406,28 +1288,9 @@ Info (12133): Instantiated megafunction "system:interface|REG:uREG|altsyncram:RE
     Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK0"
     Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
     Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/system.ram0_REG_15692.hdl.mif"
-Info (12130): Elaborated megafunction instantiation "system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0"
-Info (12133): Instantiated megafunction "system:interface|DMEM:uDMEM|altsyncram:DMEM_mem_rtl_0" with the following parameter:
-    Info (12134): Parameter "OPERATION_MODE" = "DUAL_PORT"
-    Info (12134): Parameter "WIDTH_A" = "32"
-    Info (12134): Parameter "WIDTHAD_A" = "8"
-    Info (12134): Parameter "NUMWORDS_A" = "256"
-    Info (12134): Parameter "WIDTH_B" = "32"
-    Info (12134): Parameter "WIDTHAD_B" = "8"
-    Info (12134): Parameter "NUMWORDS_B" = "256"
-    Info (12134): Parameter "ADDRESS_ACLR_A" = "NONE"
-    Info (12134): Parameter "OUTDATA_REG_B" = "UNREGISTERED"
-    Info (12134): Parameter "ADDRESS_ACLR_B" = "NONE"
-    Info (12134): Parameter "OUTDATA_ACLR_B" = "NONE"
-    Info (12134): Parameter "ADDRESS_REG_B" = "CLOCK1"
-    Info (12134): Parameter "INDATA_ACLR_A" = "NONE"
-    Info (12134): Parameter "WRCONTROL_ACLR_A" = "NONE"
-    Info (12134): Parameter "INIT_FILE" = "db/system.ram0_DMEM_22f088.hdl.mif"
-Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_r1i1.tdf
-    Info (12023): Found entity 1: altsyncram_r1i1 File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/altsyncram_r1i1.tdf Line: 28
-Info (12130): Elaborated megafunction instantiation "system:interface|ALU:uALU|lpm_divide:Div0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
-Info (12133): Instantiated megafunction "system:interface|ALU:uALU|lpm_divide:Div0" with the following parameter: File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
+    Info (12134): Parameter "INIT_FILE" = "db/system.ram1_REG_15692.hdl.mif"
+Info (12130): Elaborated megafunction instantiation "system:interface|ALU:uALU|lpm_divide:Div0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 27
+Info (12133): Instantiated megafunction "system:interface|ALU:uALU|lpm_divide:Div0" with the following parameter: File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 27
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "32"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -1442,8 +1305,8 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/add_
     Info (12023): Found entity 1: add_sub_1tc File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_1tc.tdf Line: 23
 Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_2tc.tdf
     Info (12023): Found entity 1: add_sub_2tc File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/add_sub_2tc.tdf Line: 23
-Info (12130): Elaborated megafunction instantiation "system:interface|ALU:uALU|lpm_mult:Mult0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 25
-Info (12133): Instantiated megafunction "system:interface|ALU:uALU|lpm_mult:Mult0" with the following parameter: File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 25
+Info (12130): Elaborated megafunction instantiation "system:interface|ALU:uALU|lpm_mult:Mult0" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
+Info (12133): Instantiated megafunction "system:interface|ALU:uALU|lpm_mult:Mult0" with the following parameter: File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/ALU.v Line: 26
     Info (12134): Parameter "LPM_WIDTHA" = "32"
     Info (12134): Parameter "LPM_WIDTHB" = "32"
     Info (12134): Parameter "LPM_WIDTHP" = "64"
@@ -1459,7 +1322,7 @@ Warning (14284): Synthesized away the following node(s):
     Warning (14285): Synthesized away the following DSP element node(s):
         Warning (14320): Synthesized away node "system:interface|ALU:uALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_mult7" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/mult_1ht.tdf Line: 67
         Warning (14320): Synthesized away node "system:interface|ALU:uALU|lpm_mult:Mult0|mult_1ht:auto_generated|mac_out8" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/db/mult_1ht.tdf Line: 91
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Warning (12241): 2 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Info (13014): Ignored 84 buffer(s)
     Info (13019): Ignored 84 SOFT buffer(s)
 Warning (13024): Output pins are stuck at VCC or GND
@@ -1496,17 +1359,17 @@ Warning (21074): Design contains 4 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[9]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 7
     Warning (15610): No output dependent on input pin "KEY[1]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 8
     Warning (15610): No output dependent on input pin "KEY[2]" File: D:/Study in BK/HK172/Computer Architecture/Lab/Assignment/Ass 2/MIPS_Computer_simplified/system_INTERFACE.v Line: 8
-Info (21057): Implemented 2412 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 3009 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 23 input pins
     Info (21059): Implemented 52 output pins
-    Info (21061): Implemented 2235 logic cells
-    Info (21064): Implemented 96 RAM segments
+    Info (21061): Implemented 2864 logic cells
+    Info (21064): Implemented 64 RAM segments
     Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 149 warnings
-    Info: Peak virtual memory: 807 megabytes
-    Info: Processing ended: Sun May 20 22:57:57 2018
-    Info: Elapsed time: 00:00:53
-    Info: Total CPU time (on all processors): 00:00:58
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 145 warnings
+    Info: Peak virtual memory: 783 megabytes
+    Info: Processing ended: Mon May 21 13:14:33 2018
+    Info: Elapsed time: 00:00:57
+    Info: Total CPU time (on all processors): 00:01:05
 
 
 +------------------------------------------+

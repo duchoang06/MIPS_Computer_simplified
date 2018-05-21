@@ -28,10 +28,11 @@ module system
 		);
 	
 	// controller wires
-	wire EH_flag, Reg_Write, Mem_Write, Mem_Write_f, Mem_Read, Mem_Read_f, Reg_Dst, ALU_src, Exception, Mem2Reg, Jump, Branch, Mem2Reg_f;
+	wire Reg_Write, Mem_Write, Mem_Write_f, Mem_Read, Mem_Read_f, Reg_Dst, ALU_src, Exception, Mem2Reg, Jump, Branch, Mem2Reg_f;
 	wire [3:0] ALU_control;
 	wire [1:0] ALU_op;
 	wire [7:0] ALU_status;
+	wire EH_flag;
 	
 	// datapath wires
 	//wire [7:0] PC;
@@ -45,6 +46,11 @@ module system
 	// Notes:
 	// EH_flag controlling needs adding
 	// rst controlling missing
+	
+	
+	// init
+	//initial EH_flag = 0;
+	
 	
 	// PC controlling
 	always @(posedge SYS_clk, negedge SYS_rst) begin
@@ -100,7 +106,7 @@ module system
 
 	DMEM uDMEM
 	(
-		.DMEM_address(ALU_result[7:0]), 
+		.DMEM_address(ALU_result), 
 		.DMEM_data_in(Reg_Out2),
 		.DMEM_mem_write(Mem_Write_f),
 		.DMEM_mem_read(Mem_Read_f),
@@ -147,9 +153,13 @@ module system
 	);
 	
 	// exception handler
-	assign Mem2Reg_f = (EH_flag) ? 0 : Mem2Reg;
+	/*assign Mem2Reg_f = (EH_flag) ? 0 : Mem2Reg;
 	assign Mem_Read_f = (EH_flag) ? 0 : Mem_Read;
-	assign Mem_Write_f = (EH_flag) ? 0 : Mem_Write;
+	assign Mem_Write_f = (EH_flag) ? 0 : Mem_Write;*/
+	
+	assign Mem2Reg_f = Mem2Reg;
+	assign Mem_Read_f = Mem_Read;
+	assign Mem_Write_f = Mem_Write;
 	
 	// Selection between ALU_result and Mem_Out
 	assign Data_Write = (Mem2Reg_f) ? Mem_Out : ALU_result;
@@ -242,7 +252,7 @@ module system
 
 	LCD_Selector uLCD_selector
 	(
-		.PC(PC_current), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
+		.PC(PC_current), .IMEM_data(instruction), .REG_data(Reg_Out1), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
 		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
 		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
 		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)

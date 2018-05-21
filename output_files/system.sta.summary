@@ -3,108 +3,108 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLOCK_50'
-Slack : -134.204
-TNS   : -1026.620
+Slack : -130.161
+TNS   : -996.625
 
 Type  : Slow 1200mV 85C Model Setup 'KEY[0]'
-Slack : -132.879
-TNS   : -9390.308
+Slack : -128.435
+TNS   : -52781.202
 
 Type  : Slow 1200mV 85C Model Setup 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : -11.662
-TNS   : -11.662
-
-Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
-Slack : 0.319
-TNS   : 0.000
+Slack : -11.909
+TNS   : -11.909
 
 Type  : Slow 1200mV 85C Model Hold 'CLOCK_50'
-Slack : 0.395
+Slack : 0.393
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'KEY[0]'
+Slack : 0.697
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : 3.351
+Slack : 3.735
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -275.316
+TNS   : -792.544
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
 TNS   : -79.500
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : 0.488
+Slack : 0.489
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -121.156
-TNS   : -923.738
+Slack : -117.494
+TNS   : -897.735
 
 Type  : Slow 1200mV 0C Model Setup 'KEY[0]'
-Slack : -119.893
-TNS   : -8470.071
+Slack : -115.868
+TNS   : -47567.206
 
 Type  : Slow 1200mV 0C Model Setup 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : -10.597
-TNS   : -10.597
-
-Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.249
-TNS   : 0.000
+Slack : -10.793
+TNS   : -10.793
 
 Type  : Slow 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.346
+Slack : 0.345
+TNS   : 0.000
+
+Type  : Slow 1200mV 0C Model Hold 'KEY[0]'
+Slack : 0.620
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : 3.153
+Slack : 3.442
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -274.788
+TNS   : -792.192
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
 TNS   : -79.500
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : 0.447
+Slack : 0.456
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'CLOCK_50'
-Slack : -66.137
-TNS   : -485.318
+Slack : -63.923
+TNS   : -468.393
 
 Type  : Fast 1200mV 0C Model Setup 'KEY[0]'
-Slack : -65.567
-TNS   : -4616.744
+Slack : -63.254
+TNS   : -25938.185
 
 Type  : Fast 1200mV 0C Model Setup 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : -5.094
-TNS   : -5.094
-
-Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
-Slack : 0.105
-TNS   : 0.000
+Slack : -5.217
+TNS   : -5.217
 
 Type  : Fast 1200mV 0C Model Hold 'CLOCK_50'
-Slack : 0.177
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1200mV 0C Model Hold 'KEY[0]'
+Slack : 0.278
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
-Slack : 1.536
+Slack : 1.714
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'KEY[0]'
 Slack : -3.000
-TNS   : -217.498
+TNS   : -621.732
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLOCK_50'
 Slack : -3.000
-TNS   : -54.597
+TNS   : -55.038
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'system:interface|ALU_control:uALU_control|ALU_control_out[0]'
 Slack : 0.421

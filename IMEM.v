@@ -5,7 +5,7 @@ module IMEM
 		input IMEM_clk
 	);
 	
-	reg [31:0] IMEM_mem [0:255]; // a word
+	reg [31:0] IMEM_mem [0:127]; // a word
 
 	// load instructions from file
 	initial begin

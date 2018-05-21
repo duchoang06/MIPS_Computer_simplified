@@ -20,49 +20,41 @@ module control
 	parameter RegDst = 			1'b1;	// bit 0
 	
 	// parameterized opcode for instructions
-	parameter div = 6'd0;
-	parameter mul = 6'd0;
-	parameter add = 6'd0;
-	parameter _nor = 6'd0;
-	parameter _or = 6'd0;
-	parameter slt = 6'd0;
-	parameter sll = 6'd0;
-	parameter sltu = 6'd0;
-	parameter srl = 6'd0;
-	parameter sub = 6'd0;
-	parameter jr = 6'd0;
-	parameter _xor = 6'd0;
 	parameter addi = 6'd8;
 	parameter lw = 6'd35;
 	parameter sw = 6'd43;
 	parameter j = 6'd2;
-	parameter jal = 6'd3;
 	parameter beq = 6'd4;
 	parameter bne = 6'd5;
 	parameter slti = 6'd10;
-	parameter sltiu = 6'd11;
 	parameter andi = 6'd12;
 	parameter ori = 6'd13;
-	parameter lui = 6'd15;
-	parameter lbu = 6'd36;
-	parameter lhu = 6'd37;
 	parameter sb = 6'd40;
-	parameter sh = 6'd41;
-	// parameter lb = 6'd??;
-	
-	// behavioral
-	// mul and div opcoode missing!!!
+
 	
 	initial control_signal = 11'd0;
 	
 	always @(opcode) begin
 		case(opcode)
-		sll, srl, add, sub, _xor, _or, _nor, slt, sltu, div, mul: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ~ALUsrc, RegWrite, RegDst};
-		lw, lbu, lhu: control_signal = {~Jump, ~Branch, MemRead, ~MemWrite, Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, ~RegDst};
-		sw, sb, sh: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
-		andi, ori, addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
-		j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
-		bne, beq: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
+		// R-type
+		6'd0: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ~ALUsrc, RegWrite, RegDst};
+		
+		// lw
+		lw: control_signal = {~Jump, ~Branch, MemRead, ~MemWrite, Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, ~RegDst};
+		
+		// sw
+		sw: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
+		
+		// addi, andi, ori
+		addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
+		
+		//j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
+		
+		// bne:
+		bne: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
+		
+		// beq:
+		beq: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		//slti, slti: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ALUsrc, RegWrite, RegDst}; // ALUsrc
 		//sll, srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ALUsrc, RegWrite, RegDst};
 		default: control_signal = 11'd0;
