@@ -10,7 +10,10 @@ module Exception_Handle
 	
 	always @(EH_overflow, EH_Invalid_addr, EH_Div_zero, EH_control, EH_write2_0) begin
 		if (EH_overflow || EH_Invalid_addr || EH_Div_zero || EH_control || EH_write2_0) begin
-			EH_flag <= 1'b1;
+			EH_flag = 1'b1;
+		end
+		else begin
+			EH_flag = 1'b0;
 		end
 	end
 	

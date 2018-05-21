@@ -35,6 +35,11 @@ module ALU
 		if (ALU_result == 0) begin // zero
 			ALU_status[7] = 1'b1;
 		end
+		else begin
+			ALU_status[7] = 1'b0;	
+		end
+		/////////////////////////////////////
+		
 		if ((ALU_operand_1[31] == 0 && ALU_operand_2[31] == 0 &&  ALU_result[31] == 1 && ALU_ctrl == 4'b0010)
 		|| (ALU_operand_1[31] == 1 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 0 && ALU_ctrl == 4'b0010)
 		|| (ALU_operand_1[31] == 0 && ALU_operand_2[31] == 1 &&  ALU_result[31] == 1 && ALU_ctrl == 4'b0110)
@@ -47,22 +52,42 @@ module ALU
 		) begin // overflow
 			ALU_status[6] = 1'b1;
 		end
+		else begin
+			ALU_status[6] = 1'b0;	
+		end
+		/////////////////////////////
+		
 		if (result_temp[32]) begin // carry
 			ALU_status[5] = 1'b1;
 		end
+		else begin
+			ALU_status[5] = 1'b0;	
+		end
+		//////////////////////////////////
+		
 		if (ALU_result[31] == 1'b1) begin // negative
 			ALU_status[4] = 1'b1;
 		end
+		else begin
+			ALU_status[4] = 1'b0;	
+		end
+		/////////////////////////////////
+		
 		if (!(ALU_result % 2 == 0 || ALU_result % 4 == 0)) begin
 			ALU_status[3] = 1'b1;
 		end
+		else begin
+			ALU_status[3] = 1'b0;	
+		end
+		/////////////////////////////////
+		
 		if ((ALU_ctrl == 4'b1001) && (ALU_operand_2 == 32'd0)) begin // divide by zero
 			ALU_status[2] = 1'b1;
 		end
-		
 		else begin
-			ALU_status = 8'b0000_0000;
+			ALU_status[2] = 1'b0;	
 		end
+		
 	end
 	
 	// log: complete

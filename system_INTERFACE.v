@@ -26,7 +26,6 @@ module system_INTERFACE
 		.EH_led(LEDR[0]),
 		.hex6(HEX6),
 		.hex7(HEX7),
-		.ledr(LEDR[17:1]),
 		
 		// LCD module
 		.LCD_DATA(LCD_DATA),

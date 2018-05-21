@@ -10,7 +10,7 @@ module REG
 		input REG_clk 
 	);
 
-	reg [31:0] REG_mem [31:0];
+	reg [31:0] REG_mem [0:31];
 	
 	// register $0
 	initial REG_mem[0] = 32'd0;

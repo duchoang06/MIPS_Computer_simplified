@@ -24,12 +24,11 @@ module system
 		output LCD_EN,
 
 		output [6:0] hex6,
-		output [6:0] hex7,
-		output [17:1] ledr
+		output [6:0] hex7
 		);
 	
 	// controller wires
-	wire EH_flag, Reg_Write, Mem_Write, Mem_Read, Reg_Dst, ALU_src, Exception, Mem2Reg, Jump, Branch, Mem2Reg_f;
+	wire EH_flag, Reg_Write, Mem_Write, Mem_Write_f, Mem_Read, Mem_Read_f, Reg_Dst, ALU_src, Exception, Mem2Reg, Jump, Branch, Mem2Reg_f;
 	wire [3:0] ALU_control;
 	wire [1:0] ALU_op;
 	wire [7:0] ALU_status;
@@ -58,7 +57,7 @@ module system
 	end
 
 	// Exception LED indicator
-	assign EH_Led = EH_flag;
+	assign EH_led = EH_flag;
 	
 	// PC Load from switch LED indicator
 	assign SYS_leds = SYS_pc_val;
@@ -91,13 +90,14 @@ module system
 	ALU uALU
 	(
 		.ALU_ctrl(ALU_control),
-		.ALU_operand_1(Reg_Out_1),
+		.ALU_operand_1(Reg_Out1),
 		.ALU_operand_2(ALU_operand_2),
 		.shamnt(instruction[10:6]),
 		.ALU_result(ALU_result),
 		.ALU_status(ALU_status)
 	);
 	
+
 	DMEM uDMEM
 	(
 		.DMEM_address(ALU_result[7:0]), 
@@ -199,8 +199,12 @@ module system
 	(
 		.EPC_flag(EH_flag),
 		.EPC_PC(PC_current),
-		.EPC_PC_prev(EPC)
+		.EPC_PC_eh(EPC)
 	);
+	////////////////////////////////////////////
+	//assign EH_flag = 0;
+	
+	
 	
 	// EPC indications
 	assign hex7 = ( EH_flag ) ? 7'b_0000_110 : 7'b1111_111;
