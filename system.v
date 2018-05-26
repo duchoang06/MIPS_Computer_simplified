@@ -198,15 +198,15 @@ module system
 	assign sum1 = PC_current + 1; 
 	
 	// adder of PC+1 and immediate_26, shorted to 8 bits
-	wire [7:0] sum3;
-	assign sum3 = sum1 + instruction[7:0];		// ISSUE: whether or not using << 2 ?
+	//wire [7:0] sum3;
+	//assign sum3 = sum1 + instruction[7:0];		// ISSUE: whether or not using << 2 ?
 	
 	// selection between PC+1 and sum2
 	wire [7:0] w0;
-	assign w0 = (and0) ? instruction[7:0] : sum1;
+	assign w0 = (and0) ? sum1 : sum2;
 
 	// selection between w0 and sum3
-	assign PC_next = (Jump) ? instruction[7:0] : w0;
+	assign PC_next = (Jump) ? instruction[7:0] : w0 ;
 	
 	// selection between 
 	

@@ -21,7 +21,7 @@ module ALU
 		4'b0110: ALU_result = ALU_operand_1 - ALU_operand_2;
 		4'b0000: ALU_result = ALU_operand_1 & ALU_operand_2; // and
 		4'b0001: ALU_result = ALU_operand_1 | ALU_operand_2; // or
-		4'b0111: ALU_result = (ALU_operand_1 < ALU_operand_2) ? 32'd1 : 32'd0;
+		//4'b0111: ALU_result = (ALU_operand_1 < ALU_operand_2) ? 32'd1 : 32'd0;
 		4'b1100: ALU_result = ~(ALU_operand_1 | ALU_operand_2); // nor
 		//4'b1000: ALU_result = ALU_operand_1 * ALU_operand_2; // mul
 		//4'b1001: ALU_result = ALU_operand_1 / ALU_operand_2; // div
