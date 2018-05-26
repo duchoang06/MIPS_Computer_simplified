@@ -7,7 +7,7 @@ module ALU_control
 	);
 
 	always @(ALU_control_opcode, ALU_control_funct) begin
-		if (ALU_control_opcode == 2'b00 && ALU_control_funct == 6'dx) begin // add for lw/sw, addi
+		if (ALU_control_opcode == 2'b00) begin // add for lw/sw, addi
 			ALU_control_out = 4'b0010;
 		end
 		else if (ALU_control_opcode == 2'b01 && ALU_control_funct == 6'dx) begin // sub for branch
@@ -37,12 +37,12 @@ module ALU_control
 		else if (ALU_control_opcode == 2'b10 && ALU_control_funct == 6'b100_110) begin // xor for R
 			ALU_control_out = 4'b1010;
 		end
-		else if (ALU_control_opcode == 2'b10 && ALU_control_funct == 6'b000_000) begin // sll for R
-			ALU_control_out = 4'b1100;
-		end
-		else if (ALU_control_opcode == 2'b10 && ALU_control_funct == 6'b000_010) begin // srl for R
-			ALU_control_out = 4'b1101;
-		end
+		//else if (ALU_control_opcode == 2'b10 && ALU_control_funct == 6'b000_000) begin // sll for R
+		//	ALU_control_out = 4'b1100;
+		//end
+		//else if (ALU_control_opcode == 2'b10 && ALU_control_funct == 6'b000_010) begin // srl for R
+		//	ALU_control_out = 4'b1101;
+		//end
 		else begin
 			ALU_control_out = ALU_control_out;
 		end

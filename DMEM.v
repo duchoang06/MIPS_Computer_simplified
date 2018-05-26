@@ -8,7 +8,7 @@ module DMEM
 		output [31:0] DMEM_data_out
 	);
 	
-	reg [31:0] DMEM_mem [0:10];
+	reg [31:0] DMEM_mem [0:10]; // 10 initialized words 
 
 	initial begin
 		$readmemh("DMEM_mem.hex", DMEM_mem);

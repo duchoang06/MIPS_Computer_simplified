@@ -46,17 +46,21 @@ module control
 		sw: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
 		
 		// addi, andi, ori
-		addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_I, ~Exception, ALUsrc, RegWrite, RegDst};
+		addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, RegDst};
 		
-		//j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
+		j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		
 		// bne:
 		bne: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		
 		// beq:
 		beq: control_signal = {~Jump, Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_branch, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
-		//slti, slti: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ALUsrc, RegWrite, RegDst}; // ALUsrc
-		//sll, srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ALUsrc, RegWrite, RegDst};
+	
+		// sll
+		//sll: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ALUsrc, RegWrite, RegDst};
+		
+		// srl
+		//srl: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_R, ~Exception, ALUsrc, RegWrite, RegDst};
 		default: control_signal = 11'd0;
 		endcase
 	end
