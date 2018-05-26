@@ -5,3 +5,5 @@
 *.bpm
 *.logdb
 *.hdb
+db/system.db_info
+*.cdb

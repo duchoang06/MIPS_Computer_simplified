@@ -7,7 +7,7 @@ module REG
 		input [31:0] REG_data_wr_in1,
 		output [31:0] REG_data_out1,
 		output [31:0] REG_data_out2,
-		input REG_clk 
+		input REG_clk
 	);
 
 	reg [31:0] REG_mem [0:31];
@@ -16,7 +16,7 @@ module REG
 	// register $0
 	initial REG_mem[0] = 32'd0;
 	                                                                                                                                                      
-	
+
 	assign REG_data_out1 = REG_mem[REG_address1];
 	assign REG_data_out2 = REG_mem[REG_address2];
 	

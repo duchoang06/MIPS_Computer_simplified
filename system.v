@@ -206,7 +206,7 @@ module system
 	assign w0 = (and0) ? sum1 : sum2;
 
 	// selection between w0 and sum3
-	assign PC_next = (Jump) ? instruction[7:0] : w0 ;
+	assign PC_next = (Jump) ? instruction[7:0] : sum1 ;
 	
 	// selection between 
 	
@@ -260,21 +260,21 @@ module system
 	
 	
 
-	LCD_Selector uLCD_selector
-	(
-		.PC(PC_current), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
-		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
-		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
-		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
-	);
-	
-//		LCD_Selector uLCD_selector
+//	LCD_Selector uLCD_selector
 //	(
-//		.PC(PC_current), .IMEM_data(Reg_Out1), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(ALU_operand_2), .DMEM_data(Mem_Out),
+//		.PC(PC_current), .IMEM_data(instruction), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(temp1), .DMEM_data(Mem_Out),
 //		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
 //		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
 //		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
 //	);
+	
+		LCD_Selector uLCD_selector
+	(
+		.PC(PC_current), .IMEM_data(Reg_Out1), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(ALU_operand_2), .DMEM_data(Mem_Out),
+		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
+		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
+		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
+	);
 	
 endmodule
 
