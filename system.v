@@ -117,10 +117,12 @@ module system
 		.DMEM_data_out(Mem_Out)
 	);
 	
+	wire ls_signal;
 	control ucontrol
 	(
 		.opcode(instruction[31:26]),
-		.control_signal(control_signal)
+		.control_signal(control_signal),
+		.ls_signal(ls_signal)
 	);
 	
 	wire [10:0] control_signal;
@@ -140,15 +142,17 @@ module system
 	(
 		.ALU_control_opcode(ALU_op),
 		.ALU_control_funct(instruction[5:0]),
-		.ALU_control_out(ALU_control),
-		.lw_signal(lw_signal)
+		.ALU_control_out(ALU_control)
 	);
-
+	
+	wire inva_addr;
+	assign inva_addr = (ls_signal && ALU_status[3]) ? 1 : 0;
+	
 	wire write2_0;
 	Exception_Handle uException_Handle
 	(
 		.EH_overflow(ALU_status[6]),
-		.EH_Invalid_addr(ALU_status[3]),
+		.EH_Invalid_addr(inva_addr),
 		.EH_Div_zero(ALU_status[2]),
 		.EH_control(Exception),
 		.EH_write2_0(write2_0),
@@ -170,6 +174,7 @@ module system
 	// Selection between instruction[20:16] and [15:11]
 	assign Write_Reg = (Reg_Dst) ? instruction[15:11] : instruction[20:16];
 	
+	
 	wire [31:0] Sign_Ext_out;
 	Sign_Ext uSign_Ext
 	(
@@ -185,7 +190,7 @@ module system
 	assign sum2 = sum1 + Sign_Ext_out[7:0];  // ISSUE: whether or not using << 2 ?
 	
 	// EH flag signals when write to $0
-	assign write2_0 = (lw_signal && (Write_Reg == 0)) ? 1'b1 : 1'b0;
+	assign write2_0 = (ls_signal && (Write_Reg == 0)) ? 1'b1 : 1'b0;
 	
 	wire [7:0] PC_next;
 	// adder of PC and 1
@@ -198,10 +203,10 @@ module system
 	
 	// selection between PC+1 and sum2
 	wire [7:0] w0;
-	assign w0 = (and0) ? sum2 : sum1;
+	assign w0 = (and0) ? instruction[7:0] : sum1;
 
 	// selection between w0 and sum3
-	assign PC_next = (Jump) ? sum3 : w0;
+	assign PC_next = (Jump) ? instruction[7:0] : w0;
 	
 	// selection between 
 	
@@ -263,6 +268,13 @@ module system
 		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
 	);
 	
+//		LCD_Selector uLCD_selector
+//	(
+//		.PC(PC_current), .IMEM_data(Reg_Out1), .REG_data(Reg_Out2), .ALU_data(ALU_result), .ALU_status_data(ALU_operand_2), .DMEM_data(Mem_Out),
+//		.control_data(temp2), .ALU_control_data(temp3), .EPC_data(temp4), .output_sel(SYS_output_sel),
+//		.ox1(x1), .ox2(x2), .ox3(x3), .ox4(x4), .ox5(x5), .ox6(x6), .ox7(x7), .ox8(x8),
+//		.oy(y), .oz1(z1), .oz2(z2), .oz3(z3), .oz4(z4), .oz5(z5), .oz6(z6), .oz7(z7), .oz8(z8)
+//	);
 	
 endmodule
 

@@ -8,7 +8,7 @@ module IMEM
 
 	// load instructions from file
 	initial begin
-		$readmemh("IMEM_mem.hex", IMEM_mem);
+		$readmemb("branch.txt", IMEM_mem);
 	end
 	
 	assign IMEM_instruction = IMEM_mem[IMEM_PC];

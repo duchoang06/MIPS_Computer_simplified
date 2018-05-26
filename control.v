@@ -1,7 +1,9 @@
 module control
 	(
 		input [5:0] opcode,
-		output reg [10:0] control_signal
+		output reg [10:0] control_signal,
+		output ls_signal
+		
 	);
 	
 	// parameterized control signals
@@ -46,7 +48,7 @@ module control
 		sw: control_signal = {~Jump, ~Branch, ~MemRead, MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, ~RegWrite, ~RegDst};
 		
 		// addi, andi, ori
-		addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, RegDst};
+		addi: control_signal = {~Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, ALUop_io, ~Exception, ALUsrc, RegWrite, ~RegDst};
 		
 		j: control_signal = {Jump, ~Branch, ~MemRead, ~MemWrite, ~Mem2Reg, 2'bx, ~Exception, ~ALUsrc, ~RegWrite, ~RegDst};
 		
@@ -64,5 +66,7 @@ module control
 		default: control_signal = 11'd0;
 		endcase
 	end
+	
+	assign ls_signal = (opcode == lw || opcode == sw) ? 1 : 0;
 
 endmodule 
