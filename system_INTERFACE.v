@@ -16,17 +16,16 @@ module system_INTERFACE
 	
 	system interface
 	(
-		.LCD_CLK(CLOCK_50),
+		.LCD_clk(CLOCK_50),
 		.SYS_clk(KEY[0]),
 		.SYS_rst(KEY[3]),
 		.SYS_load(SW[9]),
 		.SYS_pc_val(SW[17:10]), /// use SYS_load to load value into PC[8..0]
 		.SYS_leds(LEDG[7:0]),
 		.SYS_output_sel(SW[7:0]),
-		.EH_led(LEDR[0]),
 		.hex6(HEX6),
 		.hex7(HEX7),
-		
+		.ALU_result_leds(LEDR[17:0]),
 		// LCD module
 		.LCD_DATA(LCD_DATA),
 		.LCD_ON(LCD_ON),

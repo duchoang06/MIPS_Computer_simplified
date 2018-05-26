@@ -11,6 +11,7 @@ module REG
 	);
 
 	reg [31:0] REG_mem [0:31];
+
 	
 	// register $0
 	initial REG_mem[0] = 32'd0;
@@ -23,7 +24,6 @@ module REG
 		if (REG_write_1) begin
 			REG_mem[REG_address_wr] <= REG_data_wr_in1;
 		end
-		else begin end
 	end
 	
 
