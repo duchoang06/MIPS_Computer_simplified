@@ -8,7 +8,7 @@ module IMEM
 
 	// load instructions from file
 	initial begin
-		$readmemb("final final.txt", IMEM_mem);
+		$readmemb("Test1.txt", IMEM_mem);
 	end
 	
 	assign IMEM_instruction = IMEM_mem[IMEM_PC];
