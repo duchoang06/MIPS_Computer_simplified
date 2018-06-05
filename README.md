@@ -2,6 +2,10 @@ Bach Khoa University - Falculty of Computer Science and Engineering - Computer E
 
 Computer Architecture - Spring 2018
 
-This repository is used for assignment purpose.
+A complete source code for a simplified single clock cycle MIPS computer.
 
-I/O file within verilog: http://verilog.renerta.com/mobile/source/vrg00016.htm
+Functions:
+- LCD display.
+- User-input clock.
+- Reset key.
+- Exception indicator.
